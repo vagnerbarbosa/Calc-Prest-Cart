@@ -1,4 +1,4 @@
-package br.com.lojaoriodopeixe.controle.visao;
+package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.controle.ParcTableModel;
