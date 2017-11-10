@@ -47,8 +47,6 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         logoLRP = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         barraMenu = new javax.swing.JMenuBar();
         barraMenuArquivo = new javax.swing.JMenu();
         barraMenuItemSair = new javax.swing.JMenuItem();
@@ -99,13 +97,6 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         logoLRP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logolrp.png"))); // NOI18N
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList1);
 
         barraMenuArquivo.setText("Arquivo");
 
@@ -259,9 +250,7 @@ public class CalculadoraViewer extends javax.swing.JFrame {
     private javax.swing.JMenuItem barraMenuItemSair;
     private javax.swing.JMenuItem barraMenuItemSobre;
     private javax.swing.JButton calcularValor;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel jurosValorLabel;
