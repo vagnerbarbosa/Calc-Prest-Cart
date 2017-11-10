@@ -46,14 +46,14 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        logoLRP = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        barraMenu = new javax.swing.JMenuBar();
+        barraMenuArquivo = new javax.swing.JMenu();
+        barraMenuItemSair = new javax.swing.JMenuItem();
+        barraMenuAjuda = new javax.swing.JMenu();
+        barraMenuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora de Juros");
@@ -98,7 +98,7 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         jTable1.setModel(f);
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logolrp.png"))); // NOI18N
+        logoLRP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logolrp.png"))); // NOI18N
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -107,34 +107,34 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList1);
 
-        jMenu1.setText("Arquivo");
+        barraMenuArquivo.setText("Arquivo");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
-        jMenuItem1.setText("Sair");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        barraMenuItemSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        barraMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
+        barraMenuItemSair.setText("Sair");
+        barraMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                barraMenuItemSairActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        barraMenuArquivo.add(barraMenuItemSair);
 
-        jMenuBar1.add(jMenu1);
+        barraMenu.add(barraMenuArquivo);
 
-        jMenu2.setText("Ajuda");
+        barraMenuAjuda.setText("Ajuda");
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about-us.png"))); // NOI18N
-        jMenuItem2.setText("Sobre");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        barraMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about-us.png"))); // NOI18N
+        barraMenuItemSobre.setText("Sobre");
+        barraMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                barraMenuItemSobreActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        barraMenuAjuda.add(barraMenuItemSobre);
 
-        jMenuBar1.add(jMenu2);
+        barraMenu.add(barraMenuAjuda);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(barraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,7 +143,7 @@ public class CalculadoraViewer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
+                    .addComponent(logoLRP)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(valorVistaLabel)
@@ -182,7 +182,7 @@ public class CalculadoraViewer extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addComponent(logoLRP)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
@@ -208,13 +208,13 @@ public class CalculadoraViewer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_calcularValorActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void barraMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSairActionPerformed
         dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_barraMenuItemSairActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
         JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,19 +253,19 @@ public class CalculadoraViewer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JMenu barraMenuAjuda;
+    private javax.swing.JMenu barraMenuArquivo;
+    private javax.swing.JMenuItem barraMenuItemSair;
+    private javax.swing.JMenuItem barraMenuItemSobre;
     private javax.swing.JButton calcularValor;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel jurosValorLabel;
+    private javax.swing.JLabel logoLRP;
     private javax.swing.JTextField valorJuros;
     private javax.swing.JTextField valorParcelas;
     private javax.swing.JLabel valorParcelasLabel;
