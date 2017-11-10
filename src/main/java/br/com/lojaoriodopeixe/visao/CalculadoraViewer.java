@@ -2,6 +2,7 @@ package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.controle.ParcTableModel;
+import br.com.lojaoriodopeixe.utils.Utils;
 import br.com.lojaoriodopeixe.modelo.Parcela;
 import java.awt.Toolkit;
 import java.util.List;
@@ -20,8 +21,9 @@ public class CalculadoraViewer extends javax.swing.JFrame {
 
     public CalculadoraViewer() {
         initComponents();
+        util.centerWindow(this);
     }
-    
+    Utils util = new Utils();
     CalculadoraImpl ci = new CalculadoraImpl();
     ParcTableModel f = new ParcTableModel();
 
