@@ -1,7 +1,7 @@
 package br.com.lojaoriodopeixe.visao;
 
-import br.com.lojaoriodopeixe.modelo.Financing;
-import br.com.lojaoriodopeixe.modelo.FuncTableModel;
+import br.com.lojaoriodopeixe.controle.Financing;
+import br.com.lojaoriodopeixe.controle.FuncTableModelPrestacoes;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
@@ -26,7 +26,7 @@ import javax.swing.table.TableCellRenderer;
  */
 public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
-    FuncTableModel f = new FuncTableModel();
+    FuncTableModelPrestacoes f = new FuncTableModelPrestacoes();
     Locale locBrazil = new Locale("pt", "BR");
     NumberFormat nfValue = NumberFormat.getInstance(locBrazil);
     NumberFormat nfInterest = NumberFormat.getInstance(locBrazil);

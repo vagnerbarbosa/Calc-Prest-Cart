@@ -1,4 +1,4 @@
-package br.com.lojaoriodopeixe.modelo;
+package br.com.lojaoriodopeixe.controle;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

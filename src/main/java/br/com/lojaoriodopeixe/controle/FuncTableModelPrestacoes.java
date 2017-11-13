@@ -1,5 +1,6 @@
-package br.com.lojaoriodopeixe.modelo;
+package br.com.lojaoriodopeixe.controle;
 
+import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -9,7 +10,7 @@ import javax.swing.table.AbstractTableModel;
  * 
  * @author Eric Yuzo
  */
-public class FuncTableModel extends AbstractTableModel {
+public class FuncTableModelPrestacoes extends AbstractTableModel {
     /* Lista de Sócios que representam as linhas. */
     private List<ParcelaPrestacoes> linhas;
 
@@ -19,13 +20,13 @@ public class FuncTableModel extends AbstractTableModel {
 
 
     /* Cria um FuncionarioTableModel vazio. */
-    public FuncTableModel() {
+    public FuncTableModelPrestacoes() {
         linhas = new ArrayList<ParcelaPrestacoes>();
     }
 
     /* Cria um FuncionarioTableModel carregado com
      * a lista de sócios especificada. */
-    public FuncTableModel(List<ParcelaPrestacoes> listaDeParcelas) {
+    public FuncTableModelPrestacoes(List<ParcelaPrestacoes> listaDeParcelas) {
         linhas = new ArrayList<ParcelaPrestacoes>(listaDeParcelas);
     }
 
