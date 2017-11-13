@@ -445,6 +445,11 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 barraMenuCalcVista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
                 barraMenuCalcVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc2.png"))); // NOI18N
                 barraMenuCalcVista.setText("Cálculo para Valor à Vista");
+                barraMenuCalcVista.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        barraMenuCalcVistaActionPerformed(evt);
+                    }
+                });
                 barraMenuArquivo.add(barraMenuCalcVista);
 
                 barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
@@ -667,8 +672,8 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
 
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
         this.dispose();
-        CalculadoraSimulacaoViewer cpv = new CalculadoraSimulacaoViewer();
-        cpv.setVisible(true);
+        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        cav.setVisible(true);
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
     private void barraMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSairActionPerformed
@@ -684,6 +689,12 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
         csv.setVisible(true);
     }//GEN-LAST:event_barraMenuSimulActionPerformed
+
+    private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
+        this.dispose();
+        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        cav.setVisible(true);
+    }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
 
     /**
      * @param args the command line arguments

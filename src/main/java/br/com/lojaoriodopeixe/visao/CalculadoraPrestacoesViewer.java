@@ -445,11 +445,21 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 barraMenuCalcVista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
                 barraMenuCalcVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc2.png"))); // NOI18N
                 barraMenuCalcVista.setText("Cálculo para Valor à Vista");
+                barraMenuCalcVista.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        barraMenuCalcVistaActionPerformed(evt);
+                    }
+                });
                 barraMenuArquivo.add(barraMenuCalcVista);
 
                 barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
                 barraMenuSimul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
                 barraMenuSimul.setText("Simulador de Entrada");
+                barraMenuSimul.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        barraMenuSimulActionPerformed(evt);
+                    }
+                });
                 barraMenuArquivo.add(barraMenuSimul);
                 barraMenuArquivo.add(barraMenuSeparador);
 
@@ -673,6 +683,18 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
         JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
+
+    private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
+        this.dispose();
+        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        cav.setVisible(true);
+    }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
+
+    private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
+        this.dispose();
+        CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
+        csv.setVisible(true);
+    }//GEN-LAST:event_barraMenuSimulActionPerformed
 
     /**
      * @param args the command line arguments

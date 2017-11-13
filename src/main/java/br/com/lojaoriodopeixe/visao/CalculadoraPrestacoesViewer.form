@@ -59,6 +59,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="C&#xe1;lculo para Valor &#xe0; Vista"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="barraMenuCalcVistaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="barraMenuSimul">
               <Properties>
@@ -70,6 +73,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Simulador de Entrada"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="barraMenuSimulActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="barraMenuSeparador">
             </MenuItem>

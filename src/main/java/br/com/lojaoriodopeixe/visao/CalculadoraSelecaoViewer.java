@@ -57,7 +57,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
         barraMenuItemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora de Juros");
+        setTitle("Calculadora LRP");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
         setIconImages(getIconImages());
         setLocationByPlatform(true);
