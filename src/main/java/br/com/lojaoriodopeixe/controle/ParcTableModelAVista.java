@@ -1,6 +1,6 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.Parcela;
+import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -10,9 +10,9 @@ import javax.swing.table.AbstractTableModel;
  * 
  * @author Eric Yuzo
  */
-public class ParcTableModel extends AbstractTableModel {
+public class ParcTableModelAVista extends AbstractTableModel {
     /* Lista de Sócios que representam as linhas. */
-    private List<Parcela> linhas;
+    private List<ParcelaParaAVista> linhas;
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
@@ -20,14 +20,14 @@ public class ParcTableModel extends AbstractTableModel {
 
 
     /* Cria um FuncionarioTableModel vazio. */
-    public ParcTableModel() {
-        linhas = new ArrayList<Parcela>();
+    public ParcTableModelAVista() {
+        linhas = new ArrayList<ParcelaParaAVista>();
     }
 
     /* Cria um FuncionarioTableModel carregado com
      * a lista de sócios especificada. */
-    public ParcTableModel(List<Parcela> listaDeParcelas) {
-        linhas = new ArrayList<Parcela>(listaDeParcelas);
+    public ParcTableModelAVista(List<ParcelaParaAVista> listaDeParcelas) {
+        linhas = new ArrayList<ParcelaParaAVista>(listaDeParcelas);
     }
 
 
@@ -84,7 +84,7 @@ public class ParcTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         // Pega o sócio da linha especificada.       
-        Parcela parc = linhas.get(rowIndex);
+        ParcelaParaAVista parc = linhas.get(rowIndex);
 
         // Retorna o campo referente a coluna especificada.
         // Aqui é feito um switch para verificar qual é a coluna
@@ -130,7 +130,7 @@ public class ParcTableModel extends AbstractTableModel {
 
 
     /* Retorna o sócio da linha especificada. */
-    public Parcela getParcela(int indiceLinha) {
+    public ParcelaParaAVista getParcela(int indiceLinha) {
             if(indiceLinha < linhas.size()){
                 return linhas.get(indiceLinha);
             }
@@ -138,7 +138,7 @@ public class ParcTableModel extends AbstractTableModel {
     }
 
     /* Adiciona um registro. */
-    public void addParcela(Parcela parc) {
+    public void addParcela(ParcelaParaAVista parc) {
         // Adiciona o registro.
         linhas.add(parc);
 
@@ -166,7 +166,7 @@ public class ParcTableModel extends AbstractTableModel {
     }
 
     /* Adiciona uma lista de sócios ao final dos registros. */
-    public void addListaDeParcelas(List<Parcela> parcelas) {
+    public void addListaDeParcelas(List<ParcelaParaAVista> parcelas) {
         // Pega o tamanho antigo da tabela.
         int tamanhoAntigo = getRowCount();
 

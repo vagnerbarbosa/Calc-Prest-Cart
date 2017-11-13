@@ -1,6 +1,6 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.Parcela;
+import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
 import java.util.List;
 
 /**
@@ -21,6 +21,6 @@ public interface Calculadora {
      * @param numeroParcelas
      * @return 
      */
-    public List<Parcela> calculoFinanceiro(Double valorVista, Double taxaJuros,Integer numeroParcelas);
+    public List<ParcelaParaAVista> calculoFinanceiro(Double valorVista, Double taxaJuros,Integer numeroParcelas);
     
 }

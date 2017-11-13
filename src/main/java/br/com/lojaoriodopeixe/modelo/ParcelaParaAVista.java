@@ -1,7 +1,7 @@
 package br.com.lojaoriodopeixe.modelo;
 
 /**
- * Classe de entidade Parcela.
+ * Classe de entidade ParcelaParaAVista.
  *
  * @author Vagner Barbosa (contato@vagnerbarbosa.com)
  *
@@ -9,12 +9,12 @@ package br.com.lojaoriodopeixe.modelo;
  *
  * @version 1.0
  */
-public class Parcela {
+public class ParcelaParaAVista {
     
     private String valorParcela;
     private String numeroParcela;
 
-    public Parcela() {
+    public ParcelaParaAVista() {
     }
 
     public String getValorParcela() {

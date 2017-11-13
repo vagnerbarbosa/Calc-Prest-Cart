@@ -1,6 +1,6 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.Parcela;
+import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +17,13 @@ import java.util.List;
 public class CalculadoraImpl implements Calculadora {
 
     @Override
-    public List<Parcela> calculoFinanceiro(Double total, Double i, Integer n) {
+    public List<ParcelaParaAVista> calculoFinanceiro(Double total, Double i, Integer n) {
         DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
-        List<Parcela> parcelas = new ArrayList<>();
+        List<ParcelaParaAVista> parcelas = new ArrayList<>();
         Double PMT, PV;
         Integer x;        
         for (x = 1; x <= n; x++) {
-            Parcela parcela = new Parcela();
+            ParcelaParaAVista parcela = new ParcelaParaAVista();
             PMT = total / x;
             PV = PMT * ((Math.pow((1 + (i/100)), x) - 1) / ((i/100) * Math.pow((1 + (i/100)), x)));
             String dx = decFormat.format(PV);
