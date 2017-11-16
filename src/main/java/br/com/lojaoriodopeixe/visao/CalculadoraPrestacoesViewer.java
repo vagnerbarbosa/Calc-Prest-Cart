@@ -293,7 +293,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
                 jNumberFormatField4.setEditable(false);
                 jNumberFormatField4.setForeground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-                jNumberFormatField4.setText("jNumberFormatField1");
+                jNumberFormatField4.setText("0,01");
                 jNumberFormatField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
                 jNumberFormatField4.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,7 +318,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 jLabel8.setText("Valor da Parcela Desejada R$");
 
                 jButton3.setBackground(new java.awt.Color(51, 153, 0));
-                jButton3.setText("Calculo Reverso");
+                jButton3.setText("Cálculo Reverso");
                 jButton3.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton3ActionPerformed(evt);
@@ -524,11 +524,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_ValorFinanciarNumberFormatField3ActionPerformed
 
     private void jNumberFormatField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField4ActionPerformed
-        // TODO add your handling code here:
+        this.jNumberFormatField5.requestFocusInWindow();
     }//GEN-LAST:event_jNumberFormatField4ActionPerformed
 
     private void jNumberFormatField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField5ActionPerformed
-        // TODO add your handling code here:
+        this.jButton1.requestFocusInWindow();
     }//GEN-LAST:event_jNumberFormatField5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -548,7 +548,8 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         
         ValorFinanciarNumberFormatField3.setText("0,00");
         ValorFinanciarNumberFormatField3.setEditable(false);
-        ValorFinanciarNumberFormatField3.setForeground(Color.getHSBColor(169, 169, 169)); 
+        ValorFinanciarNumberFormatField3.setForeground(Color.getHSBColor(169, 169, 169));
+        this.jNumberFormatField4.requestFocusInWindow();
         
         } else
         {
@@ -566,7 +567,8 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         
         ValorFinanciarNumberFormatField3.setText("0,00");
         ValorFinanciarNumberFormatField3.setEditable(true);  
-        ValorFinanciarNumberFormatField3.setForeground(Color.BLACK);         
+        ValorFinanciarNumberFormatField3.setForeground(Color.BLACK);
+        this.ValorBemjNumberFormatField.requestFocusInWindow();
           
         }
     }//GEN-LAST:event_jButton3ActionPerformed
