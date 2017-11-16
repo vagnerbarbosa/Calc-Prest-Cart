@@ -1,8 +1,6 @@
 package br.com.lojaoriodopeixe.controle;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
 import java.util.Calendar;
 import java.util.Date;
 

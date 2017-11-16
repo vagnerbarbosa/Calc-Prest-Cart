@@ -37,6 +37,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     Number nInputValue = null;
     Number nOldInputValue = null;
     Financing c = new Financing();
+    boolean isReserve = false;
 
     Double inputValue = 0d;
     Integer months = 0;
@@ -531,11 +532,49 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_jNumberFormatField5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        JOptionPane.showMessageDialog(this, "Função ainda não implementada. Desculpe o Transtorno!", "Oh não!", 1);
+        if (jNumberFormatField4.isEditable() == false && jNumberFormatField5.isEditable() == false ) {
+        isReserve = true;
+         
+        jNumberFormatField4.setText("0,00");
+        jNumberFormatField5.setText("0,00");
+        jNumberFormatField4.setEditable(isReserve);
+        jNumberFormatField5.setEditable(isReserve);
+        jNumberFormatField4.setForeground(Color.BLACK);
+        jNumberFormatField5.setForeground(Color.BLACK);
+        
+        ValorEntradajNumberFormatField2.setText("0,00");
+        ValorEntradajNumberFormatField2.setEditable(false);
+        ValorEntradajNumberFormatField2.setForeground(Color.getHSBColor(169, 169, 169));
+        
+        ValorFinanciarNumberFormatField3.setText("0,00");
+        ValorFinanciarNumberFormatField3.setEditable(false);
+        ValorFinanciarNumberFormatField3.setForeground(Color.getHSBColor(169, 169, 169)); 
+        
+        } else
+        {
+          isReserve = false;  
+          jNumberFormatField4.setText("0,00");
+          jNumberFormatField5.setText("0,00");
+          jNumberFormatField4.setEditable(isReserve);
+          jNumberFormatField5.setEditable(isReserve);          
+          jNumberFormatField4.setForeground(Color.getHSBColor(169, 169, 169));
+          jNumberFormatField5.setForeground(Color.getHSBColor(169, 169, 169)); 
+          
+        ValorEntradajNumberFormatField2.setText("0,00");
+        ValorEntradajNumberFormatField2.setEditable(true);
+        ValorEntradajNumberFormatField2.setForeground(Color.BLACK);
+        
+        ValorFinanciarNumberFormatField3.setText("0,00");
+        ValorFinanciarNumberFormatField3.setEditable(true);  
+        ValorFinanciarNumberFormatField3.setForeground(Color.BLACK);         
+          
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
+            
+            if (isReserve == false) {
             nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
             nInterest = nfInterest.parse(JurosjTextField.getText());
             nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
@@ -566,6 +605,9 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
             }
             f.limpar();
             f.addListaDeParcelas(parcelas);
+            } else {
+                JOptionPane.showMessageDialog(this, "Algoritmo do Calculo Reverso!", "Atenção!", 2);
+            }
         } catch (ParseException | NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
             System.out.println(ex.getMessage());
