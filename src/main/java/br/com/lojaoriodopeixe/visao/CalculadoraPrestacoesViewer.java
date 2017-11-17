@@ -1,7 +1,8 @@
 package br.com.lojaoriodopeixe.visao;
 
-import br.com.lojaoriodopeixe.controle.Financing;
-import br.com.lojaoriodopeixe.controle.FuncTableModelPrestacoes;
+import br.com.lojaoriodopeixe.controle.Calculadora;
+import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
+import br.com.lojaoriodopeixe.utils.FuncTableModelPrestacoes;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
@@ -36,7 +37,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     Number nInterest = null;
     Number nInputValue = null;
     Number nOldInputValue = null;
-    Financing c = new Financing();
+    Calculadora c = new CalculadoraImpl();
     boolean isReserve = false;
 
     Double inputValue = 0d;
@@ -591,7 +592,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         }
         Double interest = nInterest.doubleValue();
         if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
-            jTextField3.setText(String.valueOf(c.getRealCET(interest)).replace(".", ","));
+            jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
         }
 
     }//GEN-LAST:event_JurosjTextFieldKeyReleased

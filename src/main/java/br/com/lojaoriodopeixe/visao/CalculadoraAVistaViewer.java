@@ -2,8 +2,7 @@ package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
-import br.com.lojaoriodopeixe.controle.Financing;
-import br.com.lojaoriodopeixe.controle.ParcTableModelAVista;
+import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Component;
@@ -36,7 +35,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     Number nInterest = null;
     Number nInputValue = null;
     Number nOldInputValue = null;
-    Financing c = new Financing();
+    Calculadora c = new CalculadoraImpl();
 
     Double inputValue = 0d;
     Integer parcelas = 0;

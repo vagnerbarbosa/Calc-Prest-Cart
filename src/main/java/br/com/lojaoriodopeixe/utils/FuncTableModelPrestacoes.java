@@ -1,4 +1,4 @@
-package br.com.lojaoriodopeixe.controle;
+package br.com.lojaoriodopeixe.utils;
 
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
 import java.util.ArrayList;

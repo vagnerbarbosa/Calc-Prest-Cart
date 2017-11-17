@@ -2,15 +2,13 @@ package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
-import br.com.lojaoriodopeixe.controle.Financing;
-import br.com.lojaoriodopeixe.controle.FuncTableModelPrestacoesReversa;
+import br.com.lojaoriodopeixe.utils.FuncTableModelPrestacoesReversa;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Toolkit;
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -37,7 +35,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     Number taxaJuros = null;
     Number parcelaDesejada = null;
     Number nOldInputValue = null;
-    Financing c = new Financing();
+    Calculadora c = new CalculadoraImpl();
 
     Double pDesejada = 0d;
     Integer tParcelas = 0;
@@ -466,7 +464,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         }
         Double interest = taxaJuros.doubleValue();
         if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
-            jTextField3.setText(String.valueOf(c.getRealCET(interest)).replace(".", ","));
+            jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
         }
 
     }//GEN-LAST:event_JurosjTextFieldKeyReleased

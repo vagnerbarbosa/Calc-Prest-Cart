@@ -1,6 +1,6 @@
-package br.com.lojaoriodopeixe.controle;
+package br.com.lojaoriodopeixe.utils;
 
-import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
+import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -10,24 +10,24 @@ import javax.swing.table.AbstractTableModel;
  * 
  * @author Eric Yuzo
  */
-public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
+public class ParcTableModelAVista extends AbstractTableModel {
     /* Lista de Sócios que representam as linhas. */
-    private List<ParcelaPrestacaoReversa> linhas;
+    private List<ParcelaParaAVista> linhas;
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº", "Valor Parcela","Entrada Sugerida"};
+            "Nº de Parcelas", "Valor a ser Lançado no Sabium"};
 
 
     /* Cria um FuncionarioTableModel vazio. */
-    public FuncTableModelPrestacoesReversa() {
-        linhas = new ArrayList<ParcelaPrestacaoReversa>();
+    public ParcTableModelAVista() {
+        linhas = new ArrayList<ParcelaParaAVista>();
     }
 
     /* Cria um FuncionarioTableModel carregado com
      * a lista de sócios especificada. */
-    public FuncTableModelPrestacoesReversa(List<ParcelaPrestacaoReversa> listaDeParcelas) {
-        linhas = new ArrayList<ParcelaPrestacaoReversa>(listaDeParcelas);
+    public ParcTableModelAVista(List<ParcelaParaAVista> listaDeParcelas) {
+        linhas = new ArrayList<ParcelaParaAVista>(listaDeParcelas);
     }
 
 
@@ -69,10 +69,6 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
             return Long.class;
         case 1: // Segunda coluna é o valor da parcela.
             return Long.class;
-        case 2: // Terceira coluna é a totalGeral.
-            return Long.class;          
-        case 3: // Terceira coluna é a totalGeral.
-            return Long.class;               
         default:
             // Se o índice da coluna não for válido, lança um
             // IndexOutOfBoundsException (Exceção de índice fora dos limites).
@@ -88,7 +84,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         // Pega o sócio da linha especificada.       
-        ParcelaPrestacaoReversa parc = linhas.get(rowIndex);
+        ParcelaParaAVista parc = linhas.get(rowIndex);
 
         // Retorna o campo referente a coluna especificada.
         // Aqui é feito um switch para verificar qual é a coluna
@@ -99,8 +95,6 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
             return parc.getNumeroParcela();
         case 1: // Segunda coluna é a parcela.
             return parc.getValorParcela();
-        case 2: // Terceira coluna é a totalGeral.
-            return parc.getValorEntradaSugerida();          
         default:
             // Se o índice da coluna não for válido, lança um
             // IndexOutOfBoundsException (Exceção de índice fora dos limites).
@@ -136,7 +130,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
 
 
     /* Retorna o sócio da linha especificada. */
-    public ParcelaPrestacaoReversa getParcela(int indiceLinha) {
+    public ParcelaParaAVista getParcela(int indiceLinha) {
             if(indiceLinha < linhas.size()){
                 return linhas.get(indiceLinha);
             }
@@ -144,7 +138,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
     }
 
     /* Adiciona um registro. */
-    public void addParcela(ParcelaPrestacaoReversa parc) {
+    public void addParcela(ParcelaParaAVista parc) {
         // Adiciona o registro.
         linhas.add(parc);
 
@@ -172,7 +166,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
     }
 
     /* Adiciona uma lista de sócios ao final dos registros. */
-    public void addListaDeParcelas(List<ParcelaPrestacaoReversa> parcelas) {
+    public void addListaDeParcelas(List<ParcelaParaAVista> parcelas) {
         // Pega o tamanho antigo da tabela.
         int tamanhoAntigo = getRowCount();
 
