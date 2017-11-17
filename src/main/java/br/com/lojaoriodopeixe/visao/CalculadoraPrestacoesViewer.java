@@ -87,11 +87,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jNumberFormatField4 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
-        jLabel7 = new javax.swing.JLabel();
-        jNumberFormatField5 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
-        jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable() {
             public Component prepareRenderer(TableCellRenderer renderer,
@@ -291,40 +286,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                     }
                 });
 
-                jNumberFormatField4.setEditable(false);
-                jNumberFormatField4.setForeground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-                jNumberFormatField4.setText("0,01");
-                jNumberFormatField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jNumberFormatField4.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jNumberFormatField4ActionPerformed(evt);
-                    }
-                });
-
-                jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel7.setText("Valor da Entrada Desejada R$");
-
-                jNumberFormatField5.setEditable(false);
-                jNumberFormatField5.setForeground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-                jNumberFormatField5.setText("jNumberFormatField1");
-                jNumberFormatField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jNumberFormatField5.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jNumberFormatField5ActionPerformed(evt);
-                    }
-                });
-
-                jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel8.setText("Valor da Parcela Desejada R$");
-
-                jButton3.setBackground(new java.awt.Color(51, 153, 0));
-                jButton3.setText("Cálculo Reverso");
-                jButton3.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton3ActionPerformed(evt);
-                    }
-                });
-
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
                 jTable3.setRowHeight(23);
@@ -356,33 +317,24 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel5)
-                                                .addComponent(ValorEntradajNumberFormatField2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel7))
-                                            .addComponent(jNumberFormatField4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(ValorEntradajNumberFormatField2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(10, 10, 10)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jNumberFormatField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(ValorFinanciarNumberFormatField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jLabel6)
-                                                        .addGap(1, 1, 1))
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                                .addGap(0, 104, Short.MAX_VALUE)
+                                                .addComponent(jLabel6)
+                                                .addGap(1, 1, 1)))))
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap())
                 );
                 jPanel1Layout.setVerticalGroup(
@@ -413,19 +365,8 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                                     .addComponent(ValorFinanciarNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jNumberFormatField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jNumberFormatField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                 );
 
@@ -503,9 +444,8 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 layout.setVerticalGroup(
                     layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
 
                 pack();
@@ -522,56 +462,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private void ValorFinanciarNumberFormatField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField3ActionPerformed
         this.jButton1.requestFocusInWindow();
     }//GEN-LAST:event_ValorFinanciarNumberFormatField3ActionPerformed
-
-    private void jNumberFormatField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField4ActionPerformed
-        this.jNumberFormatField5.requestFocusInWindow();
-    }//GEN-LAST:event_jNumberFormatField4ActionPerformed
-
-    private void jNumberFormatField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField5ActionPerformed
-        this.jButton1.requestFocusInWindow();
-    }//GEN-LAST:event_jNumberFormatField5ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (jNumberFormatField4.isEditable() == false && jNumberFormatField5.isEditable() == false ) {
-        isReserve = true;
-         
-        jNumberFormatField4.setText("0,00");
-        jNumberFormatField5.setText("0,00");
-        jNumberFormatField4.setEditable(isReserve);
-        jNumberFormatField5.setEditable(isReserve);
-        jNumberFormatField4.setForeground(Color.BLACK);
-        jNumberFormatField5.setForeground(Color.BLACK);
-        
-        ValorEntradajNumberFormatField2.setText("0,00");
-        ValorEntradajNumberFormatField2.setEditable(false);
-        ValorEntradajNumberFormatField2.setForeground(Color.getHSBColor(169, 169, 169));
-        
-        ValorFinanciarNumberFormatField3.setText("0,00");
-        ValorFinanciarNumberFormatField3.setEditable(false);
-        ValorFinanciarNumberFormatField3.setForeground(Color.getHSBColor(169, 169, 169));
-        this.jNumberFormatField4.requestFocusInWindow();
-        
-        } else
-        {
-          isReserve = false;  
-          jNumberFormatField4.setText("0,00");
-          jNumberFormatField5.setText("0,00");
-          jNumberFormatField4.setEditable(isReserve);
-          jNumberFormatField5.setEditable(isReserve);          
-          jNumberFormatField4.setForeground(Color.getHSBColor(169, 169, 169));
-          jNumberFormatField5.setForeground(Color.getHSBColor(169, 169, 169)); 
-          
-        ValorEntradajNumberFormatField2.setText("0,00");
-        ValorEntradajNumberFormatField2.setEditable(true);
-        ValorEntradajNumberFormatField2.setForeground(Color.BLACK);
-        
-        ValorFinanciarNumberFormatField3.setText("0,00");
-        ValorFinanciarNumberFormatField3.setEditable(true);  
-        ValorFinanciarNumberFormatField3.setForeground(Color.BLACK);
-        this.ValorBemjNumberFormatField.requestFocusInWindow();
-          
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -695,7 +585,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         try {
             if (JurosjTextField.getText() != null) {
                 nInterest = nfInterest.parse(JurosjTextField.getText());
-            }
+            } else {nInterest = nfInterest.parse("0.00");}
         } catch (ParseException ex) {
             Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -751,7 +641,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows Classic".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -796,17 +686,12 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private javax.swing.JMenuItem barraMenuSimul;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private br.com.lojaoriodopeixe.utils.JNumberFormatField jNumberFormatField4;
-    private br.com.lojaoriodopeixe.utils.JNumberFormatField jNumberFormatField5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

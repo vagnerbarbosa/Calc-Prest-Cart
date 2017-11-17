@@ -1,6 +1,6 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
+import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -10,24 +10,24 @@ import javax.swing.table.AbstractTableModel;
  * 
  * @author Eric Yuzo
  */
-public class ParcTableModelAVista extends AbstractTableModel {
+public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
     /* Lista de Sócios que representam as linhas. */
-    private List<ParcelaParaAVista> linhas;
+    private List<ParcelaPrestacaoReversa> linhas;
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº de Parcelas", "Valor a ser Lançado no Sabium"};
+            "Nº", "Valor Parcela","Entrada Sugerida"};
 
 
     /* Cria um FuncionarioTableModel vazio. */
-    public ParcTableModelAVista() {
-        linhas = new ArrayList<ParcelaParaAVista>();
+    public FuncTableModelPrestacoesReversa() {
+        linhas = new ArrayList<ParcelaPrestacaoReversa>();
     }
 
     /* Cria um FuncionarioTableModel carregado com
      * a lista de sócios especificada. */
-    public ParcTableModelAVista(List<ParcelaParaAVista> listaDeParcelas) {
-        linhas = new ArrayList<ParcelaParaAVista>(listaDeParcelas);
+    public FuncTableModelPrestacoesReversa(List<ParcelaPrestacaoReversa> listaDeParcelas) {
+        linhas = new ArrayList<ParcelaPrestacaoReversa>(listaDeParcelas);
     }
 
 
@@ -69,6 +69,10 @@ public class ParcTableModelAVista extends AbstractTableModel {
             return Long.class;
         case 1: // Segunda coluna é o valor da parcela.
             return Long.class;
+        case 2: // Terceira coluna é a totalGeral.
+            return Long.class;          
+        case 3: // Terceira coluna é a totalGeral.
+            return Long.class;               
         default:
             // Se o índice da coluna não for válido, lança um
             // IndexOutOfBoundsException (Exceção de índice fora dos limites).
@@ -84,7 +88,7 @@ public class ParcTableModelAVista extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         // Pega o sócio da linha especificada.       
-        ParcelaParaAVista parc = linhas.get(rowIndex);
+        ParcelaPrestacaoReversa parc = linhas.get(rowIndex);
 
         // Retorna o campo referente a coluna especificada.
         // Aqui é feito um switch para verificar qual é a coluna
@@ -95,6 +99,8 @@ public class ParcTableModelAVista extends AbstractTableModel {
             return parc.getNumeroParcela();
         case 1: // Segunda coluna é a parcela.
             return parc.getValorParcela();
+        case 2: // Terceira coluna é a totalGeral.
+            return parc.getValorEntradaSugerida();          
         default:
             // Se o índice da coluna não for válido, lança um
             // IndexOutOfBoundsException (Exceção de índice fora dos limites).
@@ -130,7 +136,7 @@ public class ParcTableModelAVista extends AbstractTableModel {
 
 
     /* Retorna o sócio da linha especificada. */
-    public ParcelaParaAVista getParcela(int indiceLinha) {
+    public ParcelaPrestacaoReversa getParcela(int indiceLinha) {
             if(indiceLinha < linhas.size()){
                 return linhas.get(indiceLinha);
             }
@@ -138,7 +144,7 @@ public class ParcTableModelAVista extends AbstractTableModel {
     }
 
     /* Adiciona um registro. */
-    public void addParcela(ParcelaParaAVista parc) {
+    public void addParcela(ParcelaPrestacaoReversa parc) {
         // Adiciona o registro.
         linhas.add(parc);
 
@@ -166,7 +172,7 @@ public class ParcTableModelAVista extends AbstractTableModel {
     }
 
     /* Adiciona uma lista de sócios ao final dos registros. */
-    public void addListaDeParcelas(List<ParcelaParaAVista> parcelas) {
+    public void addListaDeParcelas(List<ParcelaPrestacaoReversa> parcelas) {
         // Pega o tamanho antigo da tabela.
         int tamanhoAntigo = getRowCount();
 

@@ -1,6 +1,7 @@
 package br.com.lojaoriodopeixe.controle;
 
 import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
+import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
 import java.util.List;
 
 /**
@@ -22,5 +23,6 @@ public interface Calculadora {
      * @return 
      */
     public List<ParcelaParaAVista> calculoFinanceiro(Double valorVista, Double taxaJuros,Integer numeroParcelas);
+    public List<ParcelaPrestacaoReversa> calculoReverso(Double total, Double i, Integer n, double p);
     
 }

@@ -39,7 +39,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     Financing c = new Financing();
 
     Double inputValue = 0d;
-    Integer months = 0;
+    Integer parcelas = 0;
     Double interest = 0d;
     Double value = 0d;
 
@@ -85,10 +85,10 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
                 int rowIndex, int vColIndex) {
 
                 Component c = super.prepareRenderer(renderer, rowIndex, vColIndex);
-                if (months > 9) {
+                if (parcelas > 9) {
                     // altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(months + "ª Parcela")) {
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(parcelas + "ª Parcela")) {
                         c.setBackground(new Color(192, 0, 0));
                         c.setForeground(Color.white);
                     } else {
@@ -106,7 +106,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
                     }
                 } else {// altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + months + "ª Parcela"
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + parcelas + "ª Parcela"
 
                     )) {
                         c.setBackground(new Color(192, 0, 0));
@@ -360,12 +360,12 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             Double valorProduto = vProduto.parse(ValorBemjNumberFormatField.getText()).doubleValue();
-            Integer parcelas = pParcelas.parse(TotalParcelasjTextField.getText()).intValue();
+            parcelas = pParcelas.parse(TotalParcelasjTextField.getText()).intValue();
             Double taxaJuros = tJuros.parse(JurosjTextField.getText()).doubleValue();
             Calculadora cc = new CalculadoraImpl();
             f.limpar();
             f.addListaDeParcelas(cc.calculoFinanceiro(valorProduto, taxaJuros, parcelas));
-        } catch (Exception ex) {
+        } catch (ParseException | NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
             System.out.println(ex.getMessage());
         }
@@ -469,7 +469,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows Classic".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
