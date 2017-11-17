@@ -36,9 +36,9 @@ public class CalculadoraImpl implements Calculadora {
             PV = PMT * ((Math.pow((1 + (i/100)), x) - 1) / ((i/100) * Math.pow((1 + (i/100)), x)));
             String dx = decFormat.format(PV);
             if (x < 10){
-            parcela.setNumeroParcela("0" + String.valueOf(x) + "ª Parcela");
+            parcela.setNumeroParcela("0" + String.valueOf(x) + "ª Parcela(s)");
             } else {
-                parcela.setNumeroParcela(String.valueOf(x) + "ª Parcela");
+                parcela.setNumeroParcela(String.valueOf(x) + "ª Parcela(s)");
             }
             parcela.setValorParcela(dx);
             parcelas.add(parcela);
@@ -61,12 +61,13 @@ public class CalculadoraImpl implements Calculadora {
             
             if (entrada > 0) {
             if (x < 10) {
-            parcela.setNumeroParcela("0" + String.valueOf(x) + "ª Parcela");
+            parcela.setNumeroParcela("0" + String.valueOf(x) + "ª Parcela(s)");
             } else {
-            parcela.setNumeroParcela(String.valueOf(x) + "ª Parcela");
+            parcela.setNumeroParcela(String.valueOf(x) + "ª Parcela(s)");
             }
             parcela.setValorEntradaSugerida(dy);
             parcela.setValorParcela(dt);
+            parcela.setValorTotalPago(decFormat.format( entrada + (x * PMT) ));
             parcelas.add(parcela);
             }
         }
@@ -81,7 +82,7 @@ public class CalculadoraImpl implements Calculadora {
      * @param inputValue Valor de entrada a ser abatido do valor do financiamento
      * @return Valor da parcela do financiamento
     **/
-    public BigDecimal getInstalment(Double value, Double interest, Integer months, Double inputValue) {
+    public BigDecimal calculoPrestacoes(Double value, Double interest, Integer months, Double inputValue) {
         double realValue = value - inputValue;        
         realValue = realValue/((Math.pow((interest/100)+1, months)-1)/(Math.pow((interest/100)+1, months)*(interest/100)));        
         BigDecimal preciseValue = new BigDecimal(realValue);

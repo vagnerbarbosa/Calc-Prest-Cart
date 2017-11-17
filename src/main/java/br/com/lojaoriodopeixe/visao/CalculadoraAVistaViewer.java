@@ -87,7 +87,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
                 if (parcelas > 9) {
                     // altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(parcelas + "ª Parcela")) {
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(parcelas + "ª Parcela(s)")) {
                         c.setBackground(new Color(192, 0, 0));
                         c.setForeground(Color.white);
                     } else {
@@ -105,7 +105,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
                     }
                 } else {// altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + parcelas + "ª Parcela"
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + parcelas + "ª Parcela(s)"
 
                     )) {
                         c.setBackground(new Color(192, 0, 0));

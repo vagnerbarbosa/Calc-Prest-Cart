@@ -91,7 +91,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 if (tParcelas > 9) {
                     // altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(tParcelas + "ª Parcela")) {
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(tParcelas + "ª Parcela(s)")) {
                         c.setBackground(new Color(192, 0, 0));
                         c.setForeground(Color.white);
                     } else {
@@ -109,7 +109,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                     }
                 } else {// altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + tParcelas + "ª Parcela"
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + tParcelas + "ª Parcela(s)"
 
                     )) {
                         c.setBackground(new Color(192, 0, 0));
@@ -151,7 +151,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 jScrollPane1.setViewportView(jTable2);
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Cálculo de Prestações (Financiamento)");
+                setTitle("Cálculo de Prestações Reverso");
                 setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
                 setResizable(false);
 
@@ -227,7 +227,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
                 jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
-                jButton1.setText("Cálcular");
+                jButton1.setText("Calcular");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton1ActionPerformed(evt);

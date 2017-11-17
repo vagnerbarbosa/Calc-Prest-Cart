@@ -16,7 +16,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº", "Valor Parcela","Entrada Sugerida"};
+            "Nº", "Valor Parcela","Entrada Sugerida", "Total Pago"};
 
 
     /* Cria um FuncionarioTableModel vazio. */
@@ -100,7 +100,9 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
         case 1: // Segunda coluna é a parcela.
             return parc.getValorParcela();
         case 2: // Terceira coluna é a totalGeral.
-            return parc.getValorEntradaSugerida();          
+            return parc.getValorEntradaSugerida();   
+        case 3: // Terceira coluna é a totalGeral.
+            return parc.getValorTotalPago();             
         default:
             // Se o índice da coluna não for válido, lança um
             // IndexOutOfBoundsException (Exceção de índice fora dos limites).

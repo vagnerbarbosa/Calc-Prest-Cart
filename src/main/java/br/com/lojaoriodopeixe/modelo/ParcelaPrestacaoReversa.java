@@ -9,6 +9,7 @@ public class ParcelaPrestacaoReversa {
     private String numeroParcela;
     private String valorParcela;
     private String valorEntradaSugerida;
+    private String valorTotalPago;
 
     public ParcelaPrestacaoReversa() {
     }
@@ -37,9 +38,17 @@ public class ParcelaPrestacaoReversa {
         this.valorEntradaSugerida = valorEntradaSugerida;
     }
 
+    public String getValorTotalPago() {
+        return valorTotalPago;
+    }
+
+    public void setValorTotalPago(String valorTotalPago) {
+        this.valorTotalPago = valorTotalPago;
+    }    
+
     @Override
     public String toString() {
-        return "ParcelaPrestacaoReversa{" + "numeroParcela=" + numeroParcela + ", valorParcela=" + valorParcela + ", valorEntradaSugerida=" + valorEntradaSugerida + '}';
-    }
+        return "ParcelaPrestacaoReversa{" + "numeroParcela=" + numeroParcela + ", valorParcela=" + valorParcela + ", valorEntradaSugerida=" + valorEntradaSugerida + ", valorTotalPago=" + valorTotalPago + '}';
+    }    
     
 }

@@ -38,7 +38,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     Number nInputValue = null;
     Number nOldInputValue = null;
     Calculadora c = new CalculadoraImpl();
-    boolean isReserve = false;
 
     Double inputValue = 0d;
     Integer months = 0;
@@ -87,7 +86,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         ValorFinanciarNumberFormatField3 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable() {
             public Component prepareRenderer(TableCellRenderer renderer,
@@ -97,7 +95,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 if (months > 9) {
                     // altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(months + "ª Parcela")) {
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(months + "ª Parcela(s)")) {
                         c.setBackground(new Color(192, 0, 0));
                         c.setForeground(Color.white);
                     } else {
@@ -115,7 +113,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                     }
                 } else {// altera a cor de background da linha para vermelho e foreground para branco
                     // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + months + "ª Parcela"
+                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + months + "ª Parcela(s)"
 
                     )) {
                         c.setBackground(new Color(192, 0, 0));
@@ -269,21 +267,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 jLabel6.setText("Valor a Financiar R$");
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
-                jButton1.setLabel("OK");
+                jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
+                jButton1.setText("Calcular");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton1ActionPerformed(evt);
-                    }
-                });
-
-                jButton2.setBackground(new java.awt.Color(255, 51, 51));
-                jButton2.setLabel("Sair");
-                jButton2.setMaximumSize(new java.awt.Dimension(47, 23));
-                jButton2.setMinimumSize(new java.awt.Dimension(47, 23));
-                jButton2.setPreferredSize(new java.awt.Dimension(47, 23));
-                jButton2.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton2ActionPerformed(evt);
                     }
                 });
 
@@ -328,14 +316,15 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                                                 .addGap(0, 104, Short.MAX_VALUE)
                                                 .addComponent(jLabel6)
                                                 .addGap(1, 1, 1)))))
-                                .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap())
                 );
                 jPanel1Layout.setVerticalGroup(
@@ -364,8 +353,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(ValorEntradajNumberFormatField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ValorFinanciarNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
@@ -466,8 +454,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            
-            if (isReserve == false) {
             nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
             nInterest = nfInterest.parse(JurosjTextField.getText());
             nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
@@ -479,28 +465,25 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
             List<ParcelaPrestacoes> parcelas = new ArrayList<>();
 
-            System.out.println("Resultado: " + c.getInstalment(value, interest, months, 0d));
+            System.out.println("Resultado: " + c.calculoPrestacoes(value, interest, months, 0d));
 
             for (int i = 0; i < months * 2; ++i) {
                 ParcelaPrestacoes parcela = new ParcelaPrestacoes();
                 if (i > 1) {
                     DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
                     if (i < 10) {
-                        parcela.setNumero("0" + i + "ª Parcela");
+                        parcela.setNumero("0" + i + "ª Parcela(s)");
                     } else {
-                        parcela.setNumero(i + "ª Parcela");
+                        parcela.setNumero(i + "ª Parcela(s)");
                     }
-                    parcela.setParcela(String.valueOf(decFormat.format(c.getInstalment(value, interest, i, 0d))));
-                    parcela.setTotalParcelado(String.valueOf(decFormat.format(c.getInstalment(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
-                    parcela.setTotalGeral(String.valueOf(decFormat.format(c.getInstalment(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
+                    parcela.setParcela(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d))));
+                    parcela.setTotalParcelado(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
+                    parcela.setTotalGeral(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
                     parcelas.add(parcela);
                 } 
             }
             f.limpar();
             f.addListaDeParcelas(parcelas);
-            } else {
-                JOptionPane.showMessageDialog(this, "Algoritmo do Calculo Reverso!", "Atenção!", 2);
-            }
         } catch (ParseException | NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
             System.out.println(ex.getMessage());
@@ -584,22 +567,18 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
     private void JurosjTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JurosjTextFieldKeyReleased
         try {
-            if (JurosjTextField.getText() != null) {
+            if (!"".equals(JurosjTextField.getText())) {
                 nInterest = nfInterest.parse(JurosjTextField.getText());
             } else {nInterest = nfInterest.parse("0.00");}
         } catch (ParseException ex) {
             Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Double interest = nInterest.doubleValue();
+        interest = nInterest.doubleValue();
         if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
             jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
         }
 
     }//GEN-LAST:event_JurosjTextFieldKeyReleased
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ValorBemjNumberFormatFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldFocusGained
         ValorBemjNumberFormatField.selectAll();
@@ -686,7 +665,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator barraMenuSeparador;
     private javax.swing.JMenuItem barraMenuSimul;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
