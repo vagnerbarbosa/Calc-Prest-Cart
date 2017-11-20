@@ -267,11 +267,18 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 jLabel6.setText("Valor a Financiar R$");
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
+                jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(255, 255, 255));
                 jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
                 jButton1.setText("Calcular");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton1ActionPerformed(evt);
+                    }
+                });
+                jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        jButton1KeyPressed(evt);
                     }
                 });
 
@@ -595,7 +602,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuSairActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
-        JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog( null," Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
@@ -610,6 +617,44 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         csv.setVisible(true);
     }//GEN-LAST:event_barraMenuSimulActionPerformed
 
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        try {
+            nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
+            nInterest = nfInterest.parse(JurosjTextField.getText());
+            nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
+
+            value = nValue.doubleValue();
+            interest = nInterest.doubleValue();
+            months = Integer.parseInt(TotalParcelasjTextField.getText());
+            inputValue = nInputValue.doubleValue();
+
+            List<ParcelaPrestacoes> parcelas = new ArrayList<>();
+
+            System.out.println("Resultado: " + c.calculoPrestacoes(value, interest, months, 0d));
+
+            for (int i = 0; i < months * 2; ++i) {
+                ParcelaPrestacoes parcela = new ParcelaPrestacoes();
+                if (i > 1) {
+                    DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
+                    if (i < 10) {
+                        parcela.setNumero("0" + i + "ª Parcela(s)");
+                    } else {
+                        parcela.setNumero(i + "ª Parcela(s)");
+                    }
+                    parcela.setParcela(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d))));
+                    parcela.setTotalParcelado(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
+                    parcela.setTotalGeral(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
+                    parcelas.add(parcela);
+                } 
+            }
+            f.limpar();
+            f.addListaDeParcelas(parcelas);
+        } catch (ParseException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton1KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -623,18 +668,18 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.put("control", new Color(248, 248, 255));
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

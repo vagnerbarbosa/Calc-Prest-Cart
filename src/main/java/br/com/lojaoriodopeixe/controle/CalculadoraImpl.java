@@ -46,12 +46,13 @@ public class CalculadoraImpl implements Calculadora {
         return parcelas;
     }
     
+    @Override
     public List<ParcelaPrestacaoReversa> calculoReverso(Double total, Double i, Integer n, double PMT) {
         DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
         List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
         Double PV, entrada;
         Integer x;        
-        for (x = 1; x <= n; x++) {
+        for (x = 1; x <= n+4; x++) {
             ParcelaPrestacaoReversa parcela = new ParcelaPrestacaoReversa();
             PV = PMT * ((Math.pow((1 + (i/100)), x) - 1) / ((i/100) * Math.pow((1 + (i/100)), x)));
             entrada = total - PV;
@@ -82,6 +83,7 @@ public class CalculadoraImpl implements Calculadora {
      * @param inputValue Valor de entrada a ser abatido do valor do financiamento
      * @return Valor da parcela do financiamento
     **/
+    @Override
     public BigDecimal calculoPrestacoes(Double value, Double interest, Integer months, Double inputValue) {
         double realValue = value - inputValue;        
         realValue = realValue/((Math.pow((interest/100)+1, months)-1)/(Math.pow((interest/100)+1, months)*(interest/100)));        
@@ -89,6 +91,7 @@ public class CalculadoraImpl implements Calculadora {
         return preciseValue.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
     
+    @Override
     public BigDecimal calculoCetReal(double interest) {
         double result = 0;
         result = (Math.pow(1 + (interest / 100), 12) - 1) * 100;
@@ -106,6 +109,7 @@ public class CalculadoraImpl implements Calculadora {
      * @param dj0 DJ0 data da liberacao da primeira parcela
      * @return Custo Efetivo Total (CET)
      */
+    @Override
     public double calculoCET(double fc0, double fcj, int n, Date d0, Date dj0) {
         Calendar c = Calendar.getInstance();
 

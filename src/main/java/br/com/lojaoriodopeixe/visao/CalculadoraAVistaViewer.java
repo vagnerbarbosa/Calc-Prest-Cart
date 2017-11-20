@@ -213,11 +213,18 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
                 jLabel3.setText("Taxa de Juros %");
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
+                jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(255, 255, 255));
                 jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
                 jButton1.setText("Calcular");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton1ActionPerformed(evt);
+                    }
+                });
+                jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        jButton1KeyPressed(evt);
                     }
                 });
 
@@ -442,7 +449,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuSairActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
-        JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog( null," Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
@@ -457,6 +464,20 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
         csv.setVisible(true);
     }//GEN-LAST:event_barraMenuSimulActionPerformed
 
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        try {
+            Double valorProduto = vProduto.parse(ValorBemjNumberFormatField.getText()).doubleValue();
+            parcelas = pParcelas.parse(TotalParcelasjTextField.getText()).intValue();
+            Double taxaJuros = tJuros.parse(JurosjTextField.getText()).doubleValue();
+            Calculadora cc = new CalculadoraImpl();
+            f.limpar();
+            f.addListaDeParcelas(cc.calculoFinanceiro(valorProduto, taxaJuros, parcelas));
+        } catch (ParseException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_jButton1KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -470,18 +491,22 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.put("control", new Color(248, 248, 255));
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraAVistaViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraAVistaViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraAVistaViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CalculadoraAVistaViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

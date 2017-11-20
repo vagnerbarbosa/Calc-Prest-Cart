@@ -151,7 +151,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 jScrollPane1.setViewportView(jTable2);
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Cálculo de Prestações Reverso");
+                setTitle("Sugestão de Entrada");
                 setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
                 setResizable(false);
 
@@ -226,11 +226,18 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 jLabel4.setText("CET a.a. %");
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
+                jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(255, 255, 255));
                 jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
                 jButton1.setText("Calcular");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton1ActionPerformed(evt);
+                    }
+                });
+                jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+                    public void keyPressed(java.awt.event.KeyEvent evt) {
+                        jButton1KeyPressed(evt);
                     }
                 });
 
@@ -482,7 +489,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuSairActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
-        JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog( null," Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
@@ -501,6 +508,31 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         this.TotalParcelasjTextField.requestFocusInWindow();
     }//GEN-LAST:event_jNumberFormatField5ActionPerformed
 
+    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+        try {
+            valorProduto = totalProduto.parse(ValorBemjNumberFormatField.getText());
+            parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
+            //numeroParcela.parse(TotalParcelasjTextField.getText());
+            taxaJuros = valorJuros.parse(JurosjTextField.getText());
+            
+
+            total = valorProduto.doubleValue();
+            pDesejada = parcelaDesejada.doubleValue();
+            tParcelas = numeroParcela.parse(TotalParcelasjTextField.getText()).intValue();
+            tJuros = taxaJuros.doubleValue();
+            
+            List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
+            
+            Calculadora c2 = new CalculadoraImpl();
+            parcelas = c2.calculoReverso(total, tJuros, tParcelas, pDesejada);
+            f.limpar();
+            f.addListaDeParcelas(parcelas);
+        } catch (ParseException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }        
+    }//GEN-LAST:event_jButton1KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -514,18 +546,22 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.put("control", new Color(248, 248, 255));
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

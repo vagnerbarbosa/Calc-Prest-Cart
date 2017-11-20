@@ -3,6 +3,7 @@ package br.com.lojaoriodopeixe.visao;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
 import br.com.lojaoriodopeixe.utils.Utils;
+import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
@@ -87,7 +88,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
 
         CalculoPrestacoes2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         CalculoPrestacoes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
-        CalculoPrestacoes2.setText("Simulação de Entrada");
+        CalculoPrestacoes2.setText("Sugestão de Entrada");
         CalculoPrestacoes2.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         CalculoPrestacoes2.setPreferredSize(new java.awt.Dimension(240, 33));
         CalculoPrestacoes2.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +123,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
 
         barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
         barraMenuSimul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
-        barraMenuSimul.setText("Simulador de Entrada");
+        barraMenuSimul.setText("Sugestão de Entrada");
         barraMenuSimul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 barraMenuSimulActionPerformed(evt);
@@ -191,7 +192,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
-        JOptionPane.showConfirmDialog( null,"Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
+        JOptionPane.showConfirmDialog( null," Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void CalculoPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculoPrestacoesActionPerformed
@@ -236,18 +237,22 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    javax.swing.UIManager.put("control", new Color(248, 248, 255));
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSelecaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSelecaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalculadoraSelecaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CalculadoraSelecaoViewer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
