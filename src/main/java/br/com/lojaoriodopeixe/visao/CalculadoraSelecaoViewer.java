@@ -99,7 +99,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
 
         barraMenu.setMaximumSize(new java.awt.Dimension(90, 200));
 
-        barraMenuArquivo.setText("Arquivo");
+        barraMenuArquivo.setText("Funções");
 
         barraMenuCalcPrest.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
         barraMenuCalcPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc.png"))); // NOI18N
