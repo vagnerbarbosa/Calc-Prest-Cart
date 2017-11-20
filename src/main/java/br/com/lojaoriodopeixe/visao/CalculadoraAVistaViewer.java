@@ -306,7 +306,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
                 barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
                 barraMenuSimul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
-                barraMenuSimul.setText("Simulador de Entrada");
+                barraMenuSimul.setText("Sugestão de Entrada");
                 barraMenuSimul.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         barraMenuSimulActionPerformed(evt);
