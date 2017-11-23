@@ -18,9 +18,9 @@ import javax.swing.JOptionPane;
  */
 public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
     
-    CalculadoraPrestacoesViewer cpv = null;
-    CalculadoraAVistaViewer cav = null;
-    CalculadoraSimulacaoViewer csv = null;
+    public static CalculadoraPrestacoesViewer cpv = null;
+    public static CalculadoraAVistaViewer cav = null;
+    public static CalculadoraSimulacaoViewer csv = null;
 
     public CalculadoraSelecaoViewer() {
         initComponents();

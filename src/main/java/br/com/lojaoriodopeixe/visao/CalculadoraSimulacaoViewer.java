@@ -426,7 +426,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
             List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
             
             Calculadora c2 = new CalculadoraImpl();
-            parcelas = c2.calculoReverso(total, tJuros, tParcelas, pDesejada);
+            parcelas = c2.calculoReversoEntrada(total, tJuros, tParcelas, pDesejada);
             f.limpar();
             f.addListaDeParcelas(parcelas);
         } catch (ParseException | NumberFormatException ex) {
@@ -536,7 +536,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
             List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
             
             Calculadora c2 = new CalculadoraImpl();
-            parcelas = c2.calculoReverso(total, tJuros, tParcelas, pDesejada);
+            parcelas = c2.calculoReversoEntrada(total, tJuros, tParcelas, pDesejada);
             f.limpar();
             f.addListaDeParcelas(parcelas);
         } catch (ParseException | NumberFormatException ex) {

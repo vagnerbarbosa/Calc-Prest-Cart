@@ -13,7 +13,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -346,7 +345,9 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
                 jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jCheckBox1.setText("Reverso");
-                jCheckBox1.setBorderPaintedFlat(true);
+                jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                jCheckBox1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/no-selected.png"))); // NOI18N
+                jCheckBox1.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/no-selected.png"))); // NOI18N
                 jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jCheckBox1ActionPerformed(evt);

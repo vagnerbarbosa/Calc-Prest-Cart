@@ -47,7 +47,7 @@ public class CalculadoraImpl implements Calculadora {
     }
     
     @Override
-    public List<ParcelaPrestacaoReversa> calculoReverso(Double total, Double i, Integer n, double PMT) {
+    public List<ParcelaPrestacaoReversa> calculoReversoEntrada(Double total, Double i, Integer n, double PMT) {
         DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
         List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
         Double PV, entrada;
