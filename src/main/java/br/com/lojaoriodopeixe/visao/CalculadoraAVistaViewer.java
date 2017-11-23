@@ -41,6 +41,10 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     Integer parcelas = 0;
     Double interest = 0d;
     Double value = 0d;
+    
+    public static CalculadoraPrestacoesViewer cpv = null;
+    public static CalculadoraAVistaViewer cav = null;
+    public static CalculadoraSimulacaoViewer csv = null;    
 
     /**
      * Creates new form Main
@@ -282,7 +286,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
                 barraMenu.setMaximumSize(new java.awt.Dimension(90, 200));
 
-                barraMenuArquivo.setText("Arquivo");
+                barraMenuArquivo.setText("Funções");
 
                 barraMenuCalcPrest.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
                 barraMenuCalcPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc.png"))); // NOI18N
@@ -439,9 +443,12 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_ValorBemjNumberFormatFieldFocusGained
 
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
-        this.dispose();
-        CalculadoraPrestacoesViewer cpv = new CalculadoraPrestacoesViewer();
+        if (cpv == null) {
+        cpv = new CalculadoraPrestacoesViewer();
         cpv.setVisible(true);
+        } else {
+        cpv.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
     private void barraMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSairActionPerformed
@@ -453,15 +460,21 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
-        this.dispose();
-        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        if (cav == null) {
+        cav = new CalculadoraAVistaViewer();
         cav.setVisible(true);        
+        } else {
+        cav.setVisible(true);            
+        }
     }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
-        this.dispose();
+        if (csv == null) {
         CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
         csv.setVisible(true);
+        } else {
+        csv.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuSimulActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed

@@ -17,6 +17,10 @@ import javax.swing.JOptionPane;
  * @version 1.0
  */
 public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
+    
+    CalculadoraPrestacoesViewer cpv = null;
+    CalculadoraAVistaViewer cav = null;
+    CalculadoraSimulacaoViewer csv = null;
 
     public CalculadoraSelecaoViewer() {
         initComponents();
@@ -187,8 +191,12 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
-        CalculadoraPrestacoesViewer cpv = new CalculadoraPrestacoesViewer();
-        cpv.setVisible(true);
+        if (cpv == null) {
+            cpv = new CalculadoraPrestacoesViewer();
+            cpv.setVisible(true);
+        } else {
+            cpv.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
@@ -196,18 +204,30 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void CalculoPrestacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculoPrestacoesActionPerformed
-        CalculadoraPrestacoesViewer cpv = new CalculadoraPrestacoesViewer();
-        cpv.setVisible(true);
+        if (cpv == null) {
+            cpv = new CalculadoraPrestacoesViewer();
+            cpv.setVisible(true);
+        } else {
+            cpv.setVisible(true);
+        }
     }//GEN-LAST:event_CalculoPrestacoesActionPerformed
 
     private void CalculoPrestacoes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculoPrestacoes1ActionPerformed
-        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        if (cav == null) {
+        cav = new CalculadoraAVistaViewer();
         cav.setVisible(true);
+        } else {
+        cav.setVisible(true);    
+        }
     }//GEN-LAST:event_CalculoPrestacoes1ActionPerformed
 
     private void CalculoPrestacoes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculoPrestacoes2ActionPerformed
-        CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
-        csv.setVisible(true);
+        if (csv == null) {
+            csv = new CalculadoraSimulacaoViewer();
+            csv.setVisible(true);
+        } else {
+            csv.setVisible(true);
+        }     
     }//GEN-LAST:event_CalculoPrestacoes2ActionPerformed
 
     private void barraMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSairActionPerformed
@@ -215,13 +235,21 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuSairActionPerformed
 
     private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
-        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        if (cav == null) {
+        cav = new CalculadoraAVistaViewer();
         cav.setVisible(true);
+        } else {
+            cav.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
-        CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
+        if (csv == null) {
+        csv = new CalculadoraSimulacaoViewer();
         csv.setVisible(true);
+        } else {
+            csv.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuSimulActionPerformed
 
     /**
