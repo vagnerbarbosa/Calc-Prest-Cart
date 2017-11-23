@@ -346,8 +346,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jCheckBox1.setText("Reverso");
                 jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                jCheckBox1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/no-selected.png"))); // NOI18N
-                jCheckBox1.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/no-selected.png"))); // NOI18N
+                jCheckBox1.setDisabledSelectedIcon(null);
                 jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jCheckBox1ActionPerformed(evt);
