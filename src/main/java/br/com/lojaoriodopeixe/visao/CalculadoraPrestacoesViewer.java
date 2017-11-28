@@ -135,12 +135,9 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         }}}
                         return c;}}
                 ;
-                ValorEntradajNumberFormatField3 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
-                ValorFinanciarNumberFormatField4 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
                 jLabel9 = new javax.swing.JLabel();
                 jLabel7 = new javax.swing.JLabel();
                 jLabel10 = new javax.swing.JLabel();
-                jCheckBox1 = new javax.swing.JCheckBox();
                 barraMenu = new javax.swing.JMenuBar();
                 barraMenuArquivo = new javax.swing.JMenu();
                 barraMenuCalcPrest = new javax.swing.JMenuItem();
@@ -170,8 +167,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 setResizable(false);
                 getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
+                jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
                 jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel1.setText("Valor do Bem R$");
+                jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 11, -1, -1));
 
                 ValorBemjNumberFormatField.setText("0,01");
                 ValorBemjNumberFormatField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -197,6 +197,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         ValorBemjNumberFormatFieldKeyTyped(evt);
                     }
                 });
+                jPanel1.add(ValorBemjNumberFormatField, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 34, 228, 30));
 
                 TotalParcelasjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
                 TotalParcelasjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -210,9 +211,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         TotalParcelasjTextFieldKeyTyped(evt);
                     }
                 });
+                jPanel1.add(TotalParcelasjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 34, 117, 30));
 
                 jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel2.setText("Total de Parcelas");
+                jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 11, 117, -1));
 
                 JurosjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
                 JurosjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -227,18 +230,22 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         JurosjTextFieldKeyReleased(evt);
                     }
                 });
+                jPanel1.add(JurosjTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 34, 111, 30));
 
                 jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel3.setText("Juros ao Mês");
+                jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 11, -1, -1));
 
                 jTextField3.setEditable(false);
                 jTextField3.setBackground(new java.awt.Color(255, 255, 255));
                 jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
                 jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
                 jTextField3.setFocusable(false);
+                jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 34, 111, 30));
 
                 jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel4.setText("CET a.a. %");
+                jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 11, -1, -1));
 
                 ValorEntradajNumberFormatField2.setText("jNumberFormatField1");
                 ValorEntradajNumberFormatField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -256,9 +263,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         ValorEntradajNumberFormatField2KeyReleased(evt);
                     }
                 });
+                jPanel1.add(ValorEntradajNumberFormatField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 228, 30));
 
                 jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel5.setText("Valor da Entrada R$");
+                jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
                 ValorFinanciarNumberFormatField3.setText("jNumberFormatField1");
                 ValorFinanciarNumberFormatField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -273,9 +282,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         ValorFinanciarNumberFormatField3KeyPressed(evt);
                     }
                 });
+                jPanel1.add(ValorFinanciarNumberFormatField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 89, 238, 30));
 
                 jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel6.setText("Valor a Financiar R$");
+                jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 67, -1, -1));
 
                 jButton1.setBackground(new java.awt.Color(51, 102, 255));
                 jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -292,173 +303,25 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                         jButton1KeyPressed(evt);
                     }
                 });
+                jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 70, 107, 70));
 
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
                 jTable3.setRowHeight(23);
                 jScrollPane3.setViewportView(jTable3);
 
-                ValorEntradajNumberFormatField3.setEditable(false);
-                ValorEntradajNumberFormatField3.setBackground(new java.awt.Color(248, 248, 255));
-                ValorEntradajNumberFormatField3.setForeground(new java.awt.Color(248, 248, 255));
-                ValorEntradajNumberFormatField3.setText("jNumberFormatField1");
-                ValorEntradajNumberFormatField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                ValorEntradajNumberFormatField3.setValue(new BigDecimal(0));
-                ValorEntradajNumberFormatField3.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        ValorEntradajNumberFormatField3ActionPerformed(evt);
-                    }
-                });
-                ValorEntradajNumberFormatField3.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        ValorEntradajNumberFormatField3KeyPressed(evt);
-                    }
-                    public void keyReleased(java.awt.event.KeyEvent evt) {
-                        ValorEntradajNumberFormatField3KeyReleased(evt);
-                    }
-                });
-
-                ValorFinanciarNumberFormatField4.setEditable(false);
-                ValorFinanciarNumberFormatField4.setBackground(new java.awt.Color(248, 248, 255));
-                ValorFinanciarNumberFormatField4.setForeground(new java.awt.Color(248, 248, 255));
-                ValorFinanciarNumberFormatField4.setText("jNumberFormatField1");
-                ValorFinanciarNumberFormatField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                ValorFinanciarNumberFormatField4.setValue(new BigDecimal(0));
-                ValorFinanciarNumberFormatField4.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        ValorFinanciarNumberFormatField4ActionPerformed(evt);
-                    }
-                });
-                ValorFinanciarNumberFormatField4.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        ValorFinanciarNumberFormatField4KeyPressed(evt);
-                    }
-                });
+                jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 148, 592, 440));
 
                 jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 339, -1, -1));
 
                 jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel7.setText("Valor da Parcela Desejada R$");
+                jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 120, -1, -1));
 
                 jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                 jLabel10.setText("Valor da Entrada Desejada R$");
-
-                jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jCheckBox1.setText("Reverso");
-                jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-                jCheckBox1.setDisabledSelectedIcon(null);
-                jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jCheckBox1ActionPerformed(evt);
-                    }
-                });
-
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addComponent(jLabel1)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel3)
-                                .addGap(48, 48, 48)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(ValorEntradajNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ValorFinanciarNumberFormatField4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(90, 90, 90)
-                                        .addComponent(jLabel5))
-                                    .addComponent(ValorEntradajNumberFormatField2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel10)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(43, 43, 43)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ValorFinanciarNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(5, 5, 5)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap())
-                );
-                jPanel1Layout.setVerticalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(3, 3, 3)
-                                        .addComponent(ValorEntradajNumberFormatField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel7)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ValorFinanciarNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel6)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ValorEntradajNumberFormatField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ValorFinanciarNumberFormatField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(jLabel9))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                );
+                jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
                 getContentPane().add(jPanel1);
 
@@ -527,156 +390,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                 pack();
             }// </editor-fold>//GEN-END:initComponents
 
-    private void ValorBemjNumberFormatFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldActionPerformed
-        this.ValorEntradajNumberFormatField2.requestFocusInWindow();
-    }//GEN-LAST:event_ValorBemjNumberFormatFieldActionPerformed
-
-    private void ValorEntradajNumberFormatField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2ActionPerformed
-        this.TotalParcelasjTextField.requestFocusInWindow();
-    }//GEN-LAST:event_ValorEntradajNumberFormatField2ActionPerformed
-
-    private void ValorFinanciarNumberFormatField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField3ActionPerformed
-        this.jButton1.requestFocusInWindow();
-    }//GEN-LAST:event_ValorFinanciarNumberFormatField3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jCheckBox1.isSelected()) {  
-        
-            JOptionPane.showMessageDialog(this, "Algoritmo Reverso!", "Atenção!", 2);
-        
-        } else {
-        try {
-            nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
-            nInterest = nfInterest.parse(JurosjTextField.getText());
-            nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
-
-            value = nValue.doubleValue();
-            interest = nInterest.doubleValue();
-            months = Integer.parseInt(TotalParcelasjTextField.getText());
-            inputValue = nInputValue.doubleValue();
-
-            List<ParcelaPrestacoes> parcelas = new ArrayList<>();
-
-            System.out.println("Resultado: " + c.calculoPrestacoes(value, interest, months, 0d));
-
-            for (int i = 0; i < months * 2; ++i) {
-                ParcelaPrestacoes parcela = new ParcelaPrestacoes();
-                if (i > 1) {
-                    DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
-                    if (i < 10) {
-                        parcela.setNumero("0" + i + "ª Parcela(s)");
-                    } else {
-                        parcela.setNumero(i + "ª Parcela(s)");
-                    }
-                    parcela.setParcela(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d))));
-                    parcela.setTotalParcelado(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
-                    parcela.setTotalGeral(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
-                    parcelas.add(parcela);
-                } 
-            }
-            f.limpar();
-            f.addListaDeParcelas(parcelas);
-        } catch (ParseException | NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
-            System.out.println(ex.getMessage());
-        }
-    }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void ValorBemjNumberFormatFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyPressed
-
-    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyPressed
-
-    private void ValorEntradajNumberFormatField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2KeyPressed
-
-    }//GEN-LAST:event_ValorEntradajNumberFormatField2KeyPressed
-
-    private void ValorFinanciarNumberFormatField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorFinanciarNumberFormatField3KeyPressed
-
-    private void ValorBemjNumberFormatFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyTyped
-
-    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyTyped
-
-    private void ValorBemjNumberFormatFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyReleased
-
-        try {
-            nInputValue = nfIputValue.parse(ValorBemjNumberFormatField.getText());
-            nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
-        } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(this, "Valor informado não é compativel!", "Atenção!", 2);
-            System.out.println(ex.getMessage());
-        }
-        Double bem = nInputValue.doubleValue();
-        Double financiamento = nValue.doubleValue();
-        Double realValue = null;
-        if (!Objects.equals(bem, financiamento)) {
-            realValue = bem + 0;
-        } else {
-            realValue = financiamento + 0;
-        }
-        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
-
-        ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(realValue)));
-    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyReleased
-
-    private void ValorEntradajNumberFormatField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2KeyReleased
-        try {
-            nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
-            nValue = nfValue.parse(ValorBemjNumberFormatField.getText());
-            nOldInputValue = nfOldIputValue.parse(ValorFinanciarNumberFormatField3.getText());
-        } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(this, "Valor informado não é compativel!", "Atenção!", 2);
-            System.out.println(ex.getMessage());
-        }
-        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
-        Double entrada = nInputValue.doubleValue();
-        Double financiamento = nValue.doubleValue();
-        if (entrada > financiamento) {
-            JOptionPane.showMessageDialog(this, "Valor da entrada é maior ou igual ao Financiamento!", "Atenção!", 2);
-            Double aux = nOldInputValue.doubleValue();
-            ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(aux)));
-            ValorEntradajNumberFormatField2.setText("");
-        }
-        Double realValue = financiamento - entrada;
-        ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(realValue)));
-    }//GEN-LAST:event_ValorEntradajNumberFormatField2KeyReleased
-
-    private void TotalParcelasjTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalParcelasjTextFieldKeyTyped
-        String caracteres = "0987654321";
-        if (!caracteres.contains(evt.getKeyChar() + "")) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_TotalParcelasjTextFieldKeyTyped
-
-    private void TotalParcelasjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalParcelasjTextFieldActionPerformed
-        this.JurosjTextField.requestFocusInWindow();
-    }//GEN-LAST:event_TotalParcelasjTextFieldActionPerformed
-
-    private void JurosjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JurosjTextFieldActionPerformed
-        this.jButton1.requestFocusInWindow();
-    }//GEN-LAST:event_JurosjTextFieldActionPerformed
-
-    private void JurosjTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JurosjTextFieldKeyReleased
-        try {
-            if (!"".equals(JurosjTextField.getText())) {
-                nInterest = nfInterest.parse(JurosjTextField.getText());
-            } else {nInterest = nfInterest.parse("0.00");}
-        } catch (ParseException ex) {
-            Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        interest = nInterest.doubleValue();
-        if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
-            jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
-        }
-
-    }//GEN-LAST:event_JurosjTextFieldKeyReleased
-
-    private void ValorBemjNumberFormatFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldFocusGained
-        ValorBemjNumberFormatField.selectAll();
-    }//GEN-LAST:event_ValorBemjNumberFormatFieldFocusGained
-
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
         if (cpv == null) {
         cpv = new CalculadoraPrestacoesViewer();
@@ -740,7 +453,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                     parcela.setTotalParcelado(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
                     parcela.setTotalGeral(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
                     parcelas.add(parcela);
-                } 
+                }
             }
             f.limpar();
             f.addListaDeParcelas(parcelas);
@@ -750,48 +463,148 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1KeyPressed
 
-    private void ValorEntradajNumberFormatField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorEntradajNumberFormatField3ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            try {
+                nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
+                nInterest = nfInterest.parse(JurosjTextField.getText());
+                nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
 
-    private void ValorEntradajNumberFormatField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField3KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorEntradajNumberFormatField3KeyPressed
+                value = nValue.doubleValue();
+                interest = nInterest.doubleValue();
+                months = Integer.parseInt(TotalParcelasjTextField.getText());
+                inputValue = nInputValue.doubleValue();
 
-    private void ValorEntradajNumberFormatField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField3KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorEntradajNumberFormatField3KeyReleased
+                List<ParcelaPrestacoes> parcelas = new ArrayList<>();
 
-    private void ValorFinanciarNumberFormatField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorFinanciarNumberFormatField4ActionPerformed
+                System.out.println("Resultado: " + c.calculoPrestacoes(value, interest, months, 0d));
 
-    private void ValorFinanciarNumberFormatField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField4KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ValorFinanciarNumberFormatField4KeyPressed
+                for (int i = 0; i < months * 2; ++i) {
+                    ParcelaPrestacoes parcela = new ParcelaPrestacoes();
+                    if (i > 1) {
+                        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
+                        if (i < 10) {
+                            parcela.setNumero("0" + i + "ª Parcela(s)");
+                        } else {
+                            parcela.setNumero(i + "ª Parcela(s)");
+                        }
+                        parcela.setParcela(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d))));
+                        parcela.setTotalParcelado(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(inputValue)))));
+                        parcela.setTotalGeral(String.valueOf(decFormat.format(c.calculoPrestacoes(value, interest, i, 0d).multiply(new BigDecimal(i)).add(new BigDecimal(0d)))));
+                        parcelas.add(parcela);
+                    }
+                }
+                f.limpar();
+                f.addListaDeParcelas(parcelas);
+            } catch (ParseException | NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+                System.out.println(ex.getMessage());
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-    if (jCheckBox1.isSelected()) {        
-    ValorEntradajNumberFormatField3.setEditable(true);
-    ValorEntradajNumberFormatField3.setForeground(Color.BLACK);
-    ValorEntradajNumberFormatField3.setBackground(Color.WHITE);
-    ValorEntradajNumberFormatField3.requestFocusInWindow();
-    
-    ValorFinanciarNumberFormatField4.setEditable(true);
-    ValorFinanciarNumberFormatField4.setForeground(Color.BLACK);
-    ValorFinanciarNumberFormatField4.setBackground(Color.WHITE);    
-    } else {
-    ValorEntradajNumberFormatField3.setEditable(false);
-    ValorEntradajNumberFormatField3.setForeground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
-    ValorEntradajNumberFormatField3.setBackground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
-    ValorEntradajNumberFormatField3.setText("");
-    
-    ValorFinanciarNumberFormatField4.setEditable(false);
-    ValorFinanciarNumberFormatField4.setForeground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
-    ValorFinanciarNumberFormatField4.setBackground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
-    ValorFinanciarNumberFormatField4.setText("");
-    }
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void ValorFinanciarNumberFormatField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ValorFinanciarNumberFormatField3KeyPressed
+
+    private void ValorFinanciarNumberFormatField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorFinanciarNumberFormatField3ActionPerformed
+        this.jButton1.requestFocusInWindow();
+    }//GEN-LAST:event_ValorFinanciarNumberFormatField3ActionPerformed
+
+    private void ValorEntradajNumberFormatField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2KeyReleased
+        try {
+            nInputValue = nfIputValue.parse(ValorEntradajNumberFormatField2.getText());
+            nValue = nfValue.parse(ValorBemjNumberFormatField.getText());
+            nOldInputValue = nfOldIputValue.parse(ValorFinanciarNumberFormatField3.getText());
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Valor informado não é compativel!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }
+        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
+        Double entrada = nInputValue.doubleValue();
+        Double financiamento = nValue.doubleValue();
+        if (entrada > financiamento) {
+            JOptionPane.showMessageDialog(this, "Valor da entrada é maior ou igual ao Financiamento!", "Atenção!", 2);
+            Double aux = nOldInputValue.doubleValue();
+            ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(aux)));
+            ValorEntradajNumberFormatField2.setText("");
+        }
+        Double realValue = financiamento - entrada;
+        ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(realValue)));
+    }//GEN-LAST:event_ValorEntradajNumberFormatField2KeyReleased
+
+    private void ValorEntradajNumberFormatField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2KeyPressed
+
+    }//GEN-LAST:event_ValorEntradajNumberFormatField2KeyPressed
+
+    private void ValorEntradajNumberFormatField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorEntradajNumberFormatField2ActionPerformed
+        this.TotalParcelasjTextField.requestFocusInWindow();
+    }//GEN-LAST:event_ValorEntradajNumberFormatField2ActionPerformed
+
+    private void JurosjTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JurosjTextFieldKeyReleased
+        try {
+            if (!"".equals(JurosjTextField.getText())) {
+                nInterest = nfInterest.parse(JurosjTextField.getText());
+            } else {nInterest = nfInterest.parse("0.00");}
+        } catch (ParseException ex) {
+            Logger.getLogger(CalculadoraPrestacoesViewer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        interest = nInterest.doubleValue();
+        if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
+            jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
+        }
+    }//GEN-LAST:event_JurosjTextFieldKeyReleased
+
+    private void JurosjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JurosjTextFieldActionPerformed
+        this.jButton1.requestFocusInWindow();
+    }//GEN-LAST:event_JurosjTextFieldActionPerformed
+
+    private void TotalParcelasjTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalParcelasjTextFieldKeyTyped
+        String caracteres = "0987654321";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TotalParcelasjTextFieldKeyTyped
+
+    private void TotalParcelasjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalParcelasjTextFieldActionPerformed
+        this.JurosjTextField.requestFocusInWindow();
+    }//GEN-LAST:event_TotalParcelasjTextFieldActionPerformed
+
+    private void ValorBemjNumberFormatFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyTyped
+
+    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyTyped
+
+    private void ValorBemjNumberFormatFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyReleased
+
+        try {
+            nInputValue = nfIputValue.parse(ValorBemjNumberFormatField.getText());
+            nValue = nfValue.parse(ValorFinanciarNumberFormatField3.getText());
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(this, "Valor informado não é compativel!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }
+        Double bem = nInputValue.doubleValue();
+        Double financiamento = nValue.doubleValue();
+        Double realValue;
+        if (!Objects.equals(bem, financiamento)) {
+            realValue = bem + 0;
+        } else {
+            realValue = financiamento + 0;
+        }
+        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
+
+        ValorFinanciarNumberFormatField3.setText(String.valueOf(decFormat.format(realValue)));
+    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyReleased
+
+    private void ValorBemjNumberFormatFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyPressed
+
+    }//GEN-LAST:event_ValorBemjNumberFormatFieldKeyPressed
+
+    private void ValorBemjNumberFormatFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldActionPerformed
+        this.ValorEntradajNumberFormatField2.requestFocusInWindow();
+    }//GEN-LAST:event_ValorBemjNumberFormatFieldActionPerformed
+
+    private void ValorBemjNumberFormatFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldFocusGained
+        ValorBemjNumberFormatField.selectAll();
+    }//GEN-LAST:event_ValorBemjNumberFormatFieldFocusGained
 
     /**
      * @param args the command line arguments
@@ -837,9 +650,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private javax.swing.JTextField TotalParcelasjTextField;
     private br.com.lojaoriodopeixe.utils.JNumberFormatField ValorBemjNumberFormatField;
     private br.com.lojaoriodopeixe.utils.JNumberFormatField ValorEntradajNumberFormatField2;
-    private br.com.lojaoriodopeixe.utils.JNumberFormatField ValorEntradajNumberFormatField3;
     private br.com.lojaoriodopeixe.utils.JNumberFormatField ValorFinanciarNumberFormatField3;
-    private br.com.lojaoriodopeixe.utils.JNumberFormatField ValorFinanciarNumberFormatField4;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenu barraMenuAjuda;
     private javax.swing.JMenu barraMenuArquivo;
@@ -850,7 +661,6 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator barraMenuSeparador;
     private javax.swing.JMenuItem barraMenuSimul;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

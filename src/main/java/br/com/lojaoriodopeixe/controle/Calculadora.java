@@ -26,6 +26,7 @@ public interface Calculadora {
      */
     public List<ParcelaParaAVista> calculoFinanceiro(Double valorVista, Double taxaJuros,Integer numeroParcelas);
     public List<ParcelaPrestacaoReversa> calculoReversoEntrada(Double total, Double i, Integer n, double p);
+    public List<ParcelaPrestacaoReversa> calculoEntradaIgualParcela(Double pv, Integer n, Double i);
     public BigDecimal calculoPrestacoes(Double value, Double interest, Integer months, Double inputValue);
     public BigDecimal calculoCetReal(double interest);
     public double calculoCET(double fc0, double fcj, int n, Date d0, Date dj0);

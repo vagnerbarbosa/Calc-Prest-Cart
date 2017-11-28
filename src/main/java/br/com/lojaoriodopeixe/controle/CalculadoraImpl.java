@@ -145,4 +145,30 @@ public class CalculadoraImpl implements Calculadora {
         return cet * 100.0;
     }      
 
+    @Override
+    public List<ParcelaPrestacaoReversa> calculoEntradaIgualParcela(Double PV, Integer n, Double i) {
+        double PMT, CF;
+        List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
+        DecimalFormat decFormat = new DecimalFormat("¤ #,###,##0.00");
+        
+        for (int x = 1; x < n+4; x++) {
+        if (x > 1) {    
+        CF = (i/100)/(1-(1/Math.pow(1+(i/100), x-1)));        
+        PMT = (PV * CF)/(1+CF);
+        
+        ParcelaPrestacaoReversa parcela = new ParcelaPrestacaoReversa();
+        if (x < 10) {
+        parcela.setNumeroParcela("01 + " + "0" + String.valueOf(x) + "ª Parc.");
+        } else {
+        parcela.setNumeroParcela("01 + " + String.valueOf(x) + "ª Parc.");    
+        }
+        parcela.setValorEntradaSugerida(decFormat.format( PMT ));
+        parcela.setValorParcela(decFormat.format( PMT ));
+        parcela.setValorTotalPago(decFormat.format( PMT + (x * PMT) ));
+        parcelas.add(parcela);
+        }
+        }
+        return parcelas;        
+    }
+
 }

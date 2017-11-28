@@ -80,8 +80,6 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         JurosjTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jNumberFormatField5 = new br.com.lojaoriodopeixe.utils.JNumberFormatField();
         jLabel8 = new javax.swing.JLabel();
@@ -91,326 +89,385 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                 int rowIndex, int vColIndex) {
 
                 Component c = super.prepareRenderer(renderer, rowIndex, vColIndex);
-                if (tParcelas > 9) {
-                    // altera a cor de background da linha para vermelho e foreground para branco
-                    // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals(tParcelas + "ª Parcela(s)")) {
-                        c.setBackground(new Color(192, 0, 0));
-                        c.setForeground(Color.white);
-                    } else {
-                        // mantem a cor padrão de foreground
-                        c.setForeground(getForeground());
-
-                        // determina a cor de background da linha selecionada
-                        if (isCellSelected(rowIndex, vColIndex)) {
-                            c.setBackground(new Color(184, 207, 229));
+                if (jCheckBox4.isSelected()) {
+                    if ((tParcelas - 1) > 9) {
+                        // altera a cor de background da linha para vermelho e foreground para branco
+                        // quando o valor da coluna 3 for igual a fechado
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + " + (tParcelas-1) + "ª Parc.")) {
+                            c.setBackground(new Color(192, 0, 0));
+                            c.setForeground(Color.white);
                         } else {
-                            // linhas não selecionadas, manter cor de background padrão
-                            c.setBackground(getBackground());
+                            // mantem a cor padrão de foreground
+                            c.setForeground(getForeground());
+
+                            // determina a cor de background da linha selecionada
+                            if (isCellSelected(rowIndex, vColIndex)) {
+                                c.setBackground(new Color(184, 207, 229));
+                            } else {
+                                // linhas não selecionadas, manter cor de background padrão
+                                c.setBackground(getBackground());
+                            }
+
                         }
+                    } else {// altera a cor de background da linha para vermelho e foreground para branco
+                        // quando o valor da coluna 3 for igual a fechado
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + 0" + (tParcelas-1) + "ª Parc."
 
-                    }
-                } else {// altera a cor de background da linha para vermelho e foreground para branco
-                    // quando o valor da coluna 3 for igual a fechado
-                    if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + tParcelas + "ª Parcela(s)"
+                        )) {
+                            c.setBackground(new Color(192, 0, 0));
+                            c.setForeground(Color.white);
+                        }else {
+                            // mantem a cor padrão de foreground
+                            c.setForeground(getForeground());
 
-                    )) {
-                        c.setBackground(new Color(192, 0, 0));
-                        c.setForeground(Color.white);
-                    }else {
-                        // mantem a cor padrão de foreground
-                        c.setForeground(getForeground());
-
-                        // determina a cor de background da linha selecionada
-                        if (isCellSelected(rowIndex, vColIndex)) {
-                            c.setBackground(new Color(184, 207, 229));
+                            // determina a cor de background da linha selecionada
+                            if (isCellSelected(rowIndex, vColIndex)) {
+                                c.setBackground(new Color(184, 207, 229));
+                            } else {
+                                // linhas não selecionadas, manter cor de background padrão
+                                c.setBackground(getBackground());
+                            }}}
+                            return c;
                         } else {
-                            // linhas não selecionadas, manter cor de background padrão
-                            c.setBackground(getBackground());
-                        }}}
-                        return c;}}
-                ;
-                barraMenu = new javax.swing.JMenuBar();
-                barraMenuArquivo = new javax.swing.JMenu();
-                barraMenuCalcPrest = new javax.swing.JMenuItem();
-                barraMenuCalcVista = new javax.swing.JMenuItem();
-                barraMenuSimul = new javax.swing.JMenuItem();
-                barraMenuSeparador = new javax.swing.JPopupMenu.Separator();
-                barraMenuSair = new javax.swing.JMenuItem();
-                barraMenuAjuda = new javax.swing.JMenu();
-                barraMenuItemSobre = new javax.swing.JMenuItem();
 
-                jTable2.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object [][] {
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null}
-                    },
-                    new String [] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
-                    }
-                ));
-                jScrollPane1.setViewportView(jTable2);
+                            if (tParcelas > 9) {
+                                // altera a cor de background da linha para vermelho e foreground para branco
+                                // quando o valor da coluna 3 for igual a fechado
+                                if (jTable3.getValueAt(rowIndex, 0).toString().equals(tParcelas + "ª Parcela(s)")) {
+                                    c.setBackground(new Color(192, 0, 0));
+                                    c.setForeground(Color.white);
+                                } else {
+                                    // mantem a cor padrão de foreground
+                                    c.setForeground(getForeground());
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-                setTitle("Sugestão de Entrada");
-                setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
-                setResizable(false);
+                                    // determina a cor de background da linha selecionada
+                                    if (isCellSelected(rowIndex, vColIndex)) {
+                                        c.setBackground(new Color(184, 207, 229));
+                                    } else {
+                                        // linhas não selecionadas, manter cor de background padrão
+                                        c.setBackground(getBackground());
+                                    }
 
-                jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel1.setText("Valor do Produto R$");
+                                }
+                            } else {// altera a cor de background da linha para vermelho e foreground para branco
+                                // quando o valor da coluna 3 for igual a fechado
+                                if (jTable3.getValueAt(rowIndex, 0).toString().equals("0" + tParcelas + "ª Parcela(s)"
 
-                ValorBemjNumberFormatField.setText("0,00");
-                ValorBemjNumberFormatField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                ValorBemjNumberFormatField.setValue(new BigDecimal(0));
-                ValorBemjNumberFormatField.addFocusListener(new java.awt.event.FocusAdapter() {
-                    public void focusGained(java.awt.event.FocusEvent evt) {
-                        ValorBemjNumberFormatFieldFocusGained(evt);
-                    }
-                });
-                ValorBemjNumberFormatField.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        ValorBemjNumberFormatFieldActionPerformed(evt);
-                    }
-                });
-                ValorBemjNumberFormatField.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        ValorBemjNumberFormatFieldKeyPressed(evt);
-                    }
-                    public void keyReleased(java.awt.event.KeyEvent evt) {
-                        ValorBemjNumberFormatFieldKeyReleased(evt);
-                    }
-                    public void keyTyped(java.awt.event.KeyEvent evt) {
-                        ValorBemjNumberFormatFieldKeyTyped(evt);
-                    }
-                });
+                                )) {
+                                    c.setBackground(new Color(192, 0, 0));
+                                    c.setForeground(Color.white);
+                                }else {
+                                    // mantem a cor padrão de foreground
+                                    c.setForeground(getForeground());
 
-                TotalParcelasjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                TotalParcelasjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-                TotalParcelasjTextField.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        TotalParcelasjTextFieldActionPerformed(evt);
-                    }
-                });
-                TotalParcelasjTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyTyped(java.awt.event.KeyEvent evt) {
-                        TotalParcelasjTextFieldKeyTyped(evt);
-                    }
-                });
+                                    // determina a cor de background da linha selecionada
+                                    if (isCellSelected(rowIndex, vColIndex)) {
+                                        c.setBackground(new Color(184, 207, 229));
+                                    } else {
+                                        // linhas não selecionadas, manter cor de background padrão
+                                        c.setBackground(getBackground());
+                                    }}}
+                                    return c;}}}
+                        ;
+                        jCheckBox4 = new javax.swing.JCheckBox();
+                        barraMenu = new javax.swing.JMenuBar();
+                        barraMenuArquivo = new javax.swing.JMenu();
+                        barraMenuCalcPrest = new javax.swing.JMenuItem();
+                        barraMenuCalcVista = new javax.swing.JMenuItem();
+                        barraMenuSimul = new javax.swing.JMenuItem();
+                        barraMenuSeparador = new javax.swing.JPopupMenu.Separator();
+                        barraMenuSair = new javax.swing.JMenuItem();
+                        barraMenuAjuda = new javax.swing.JMenu();
+                        barraMenuItemSobre = new javax.swing.JMenuItem();
 
-                jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel2.setText("Total de Parcelas");
+                        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object [][] {
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null},
+                                {null, null, null, null}
+                            },
+                            new String [] {
+                                "Title 1", "Title 2", "Title 3", "Title 4"
+                            }
+                        ));
+                        jScrollPane1.setViewportView(jTable2);
 
-                JurosjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                JurosjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-                JurosjTextField.setPreferredSize(new java.awt.Dimension(6, 26));
-                JurosjTextField.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        JurosjTextFieldActionPerformed(evt);
-                    }
-                });
-                JurosjTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyReleased(java.awt.event.KeyEvent evt) {
-                        JurosjTextFieldKeyReleased(evt);
-                    }
-                });
+                        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+                        setTitle("Sugestão de Entrada");
+                        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
+                        setResizable(false);
 
-                jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel3.setText("Juros ao Mês");
+                        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                        jLabel1.setText("Valor do Produto R$");
 
-                jTextField3.setEditable(false);
-                jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-                jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-                jTextField3.setFocusable(false);
+                        ValorBemjNumberFormatField.setText("0,00");
+                        ValorBemjNumberFormatField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                        ValorBemjNumberFormatField.setValue(new BigDecimal(0));
+                        ValorBemjNumberFormatField.addFocusListener(new java.awt.event.FocusAdapter() {
+                            public void focusGained(java.awt.event.FocusEvent evt) {
+                                ValorBemjNumberFormatFieldFocusGained(evt);
+                            }
+                        });
+                        ValorBemjNumberFormatField.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                ValorBemjNumberFormatFieldActionPerformed(evt);
+                            }
+                        });
+                        ValorBemjNumberFormatField.addKeyListener(new java.awt.event.KeyAdapter() {
+                            public void keyPressed(java.awt.event.KeyEvent evt) {
+                                ValorBemjNumberFormatFieldKeyPressed(evt);
+                            }
+                            public void keyReleased(java.awt.event.KeyEvent evt) {
+                                ValorBemjNumberFormatFieldKeyReleased(evt);
+                            }
+                            public void keyTyped(java.awt.event.KeyEvent evt) {
+                                ValorBemjNumberFormatFieldKeyTyped(evt);
+                            }
+                        });
 
-                jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel4.setText("CET a.a. %");
+                        TotalParcelasjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                        TotalParcelasjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+                        TotalParcelasjTextField.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                TotalParcelasjTextFieldActionPerformed(evt);
+                            }
+                        });
+                        TotalParcelasjTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+                            public void keyTyped(java.awt.event.KeyEvent evt) {
+                                TotalParcelasjTextFieldKeyTyped(evt);
+                            }
+                        });
 
-                jButton1.setBackground(new java.awt.Color(51, 102, 255));
-                jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-                jButton1.setForeground(new java.awt.Color(255, 255, 255));
-                jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
-                jButton1.setText("Calcular");
-                jButton1.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton1ActionPerformed(evt);
-                    }
-                });
-                jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
-                    public void keyPressed(java.awt.event.KeyEvent evt) {
-                        jButton1KeyPressed(evt);
-                    }
-                });
+                        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                        jLabel2.setText("Total de Parcelas");
 
-                jNumberFormatField5.setText("0,00");
-                jNumberFormatField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-                jNumberFormatField5.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jNumberFormatField5ActionPerformed(evt);
-                    }
-                });
+                        JurosjTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                        JurosjTextField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+                        JurosjTextField.setPreferredSize(new java.awt.Dimension(6, 26));
+                        JurosjTextField.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                JurosjTextFieldActionPerformed(evt);
+                            }
+                        });
+                        JurosjTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+                            public void keyReleased(java.awt.event.KeyEvent evt) {
+                                JurosjTextFieldKeyReleased(evt);
+                            }
+                        });
 
-                jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-                jLabel8.setText("Valor da Parcela Desejada R$");
+                        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                        jLabel3.setText("Juros ao Mês");
 
-                jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-                jTable3.setModel(f);
-                jTable3.setRowHeight(23);
-                jScrollPane3.setViewportView(jTable3);
+                        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+                        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+                        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+                        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calculator.png"))); // NOI18N
+                        jButton1.setText("Calcular");
+                        jButton1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                            }
+                        });
+                        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+                            public void keyPressed(java.awt.event.KeyEvent evt) {
+                                jButton1KeyPressed(evt);
+                            }
+                        });
 
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
+                        jNumberFormatField5.setText("0,00");
+                        jNumberFormatField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                        jNumberFormatField5.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jNumberFormatField5ActionPerformed(evt);
+                            }
+                        });
+
+                        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                        jLabel8.setText("Valor da Parcela Desejada R$");
+
+                        jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+                        jTable3.setModel(f);
+                        jTable3.setRowHeight(23);
+                        jScrollPane3.setViewportView(jTable3);
+
+                        jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+                        jCheckBox4.setText("Entrada = Parcela");
+                        jCheckBox4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+                        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jCheckBox4ActionPerformed(evt);
+                            }
+                        });
+
+                        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                        jPanel1.setLayout(jPanel1Layout);
+                        jPanel1Layout.setHorizontalGroup(
+                            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jNumberFormatField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel8))
-                                .addGap(10, 10, 10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jCheckBox4))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3))))
+                                .addContainerGap())
+                            .addComponent(jScrollPane3)
+                        );
+                        jPanel1Layout.setVerticalGroup(
+                            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TotalParcelasjTextField)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(jLabel3))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap())
-                );
-                jPanel1Layout.setVerticalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jNumberFormatField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                        .addContainerGap())
-                );
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jNumberFormatField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+                                .addContainerGap())
+                        );
 
-                barraMenu.setMaximumSize(new java.awt.Dimension(90, 200));
+                        barraMenu.setMaximumSize(new java.awt.Dimension(90, 200));
 
-                barraMenuArquivo.setText("Funções");
+                        barraMenuArquivo.setText("Funções");
 
-                barraMenuCalcPrest.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
-                barraMenuCalcPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc.png"))); // NOI18N
-                barraMenuCalcPrest.setText("Cálculo de Prestações");
-                barraMenuCalcPrest.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        barraMenuCalcPrestActionPerformed(evt);
-                    }
-                });
-                barraMenuArquivo.add(barraMenuCalcPrest);
+                        barraMenuCalcPrest.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
+                        barraMenuCalcPrest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc.png"))); // NOI18N
+                        barraMenuCalcPrest.setText("Cálculo de Prestações");
+                        barraMenuCalcPrest.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                barraMenuCalcPrestActionPerformed(evt);
+                            }
+                        });
+                        barraMenuArquivo.add(barraMenuCalcPrest);
 
-                barraMenuCalcVista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
-                barraMenuCalcVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc2.png"))); // NOI18N
-                barraMenuCalcVista.setText("Cálculo para Valor à Vista");
-                barraMenuCalcVista.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        barraMenuCalcVistaActionPerformed(evt);
-                    }
-                });
-                barraMenuArquivo.add(barraMenuCalcVista);
+                        barraMenuCalcVista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
+                        barraMenuCalcVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc2.png"))); // NOI18N
+                        barraMenuCalcVista.setText("Cálculo para Valor à Vista");
+                        barraMenuCalcVista.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                barraMenuCalcVistaActionPerformed(evt);
+                            }
+                        });
+                        barraMenuArquivo.add(barraMenuCalcVista);
 
-                barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
-                barraMenuSimul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
-                barraMenuSimul.setText("Sugestão de Entrada");
-                barraMenuSimul.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        barraMenuSimulActionPerformed(evt);
-                    }
-                });
-                barraMenuArquivo.add(barraMenuSimul);
-                barraMenuArquivo.add(barraMenuSeparador);
+                        barraMenuSimul.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
+                        barraMenuSimul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calc3.png"))); // NOI18N
+                        barraMenuSimul.setText("Sugestão de Entrada");
+                        barraMenuSimul.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                barraMenuSimulActionPerformed(evt);
+                            }
+                        });
+                        barraMenuArquivo.add(barraMenuSimul);
+                        barraMenuArquivo.add(barraMenuSeparador);
 
-                barraMenuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-                barraMenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
-                barraMenuSair.setText("Sair");
-                barraMenuSair.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        barraMenuSairActionPerformed(evt);
-                    }
-                });
-                barraMenuArquivo.add(barraMenuSair);
+                        barraMenuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+                        barraMenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit.png"))); // NOI18N
+                        barraMenuSair.setText("Sair");
+                        barraMenuSair.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                barraMenuSairActionPerformed(evt);
+                            }
+                        });
+                        barraMenuArquivo.add(barraMenuSair);
 
-                barraMenu.add(barraMenuArquivo);
+                        barraMenu.add(barraMenuArquivo);
 
-                barraMenuAjuda.setText("Ajuda");
+                        barraMenuAjuda.setText("Ajuda");
 
-                barraMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about-us.png"))); // NOI18N
-                barraMenuItemSobre.setText("Sobre");
-                barraMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        barraMenuItemSobreActionPerformed(evt);
-                    }
-                });
-                barraMenuAjuda.add(barraMenuItemSobre);
+                        barraMenuItemSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about-us.png"))); // NOI18N
+                        barraMenuItemSobre.setText("Sobre");
+                        barraMenuItemSobre.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                barraMenuItemSobreActionPerformed(evt);
+                            }
+                        });
+                        barraMenuAjuda.add(barraMenuItemSobre);
 
-                barraMenu.add(barraMenuAjuda);
+                        barraMenu.add(barraMenuAjuda);
 
-                setJMenuBar(barraMenu);
+                        setJMenuBar(barraMenu);
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                );
-                layout.setVerticalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                );
+                        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+                        getContentPane().setLayout(layout);
+                        layout.setHorizontalGroup(
+                            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                        );
+                        layout.setVerticalGroup(
+                            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        );
 
-                pack();
-            }// </editor-fold>//GEN-END:initComponents
+                        pack();
+                    }// </editor-fold>//GEN-END:initComponents
 
     private void ValorBemjNumberFormatFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldActionPerformed
+        if (jCheckBox4.isSelected()) {
+            this.TotalParcelasjTextField.requestFocusInWindow();
+    } else {
         this.jNumberFormatField5.requestFocusInWindow();
+         }
     }//GEN-LAST:event_ValorBemjNumberFormatFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    if (jCheckBox4.isSelected()) {
+        try {
+            valorProduto = totalProduto.parse(ValorBemjNumberFormatField.getText());
+            parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
+            //numeroParcela.parse(TotalParcelasjTextField.getText());
+            taxaJuros = valorJuros.parse(JurosjTextField.getText());
+            
+
+            total = valorProduto.doubleValue();
+            pDesejada = parcelaDesejada.doubleValue();
+            tParcelas = numeroParcela.parse(TotalParcelasjTextField.getText()).intValue();
+            tJuros = taxaJuros.doubleValue();
+            
+            List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
+            
+            Calculadora c2 = new CalculadoraImpl();
+            parcelas = c2.calculoEntradaIgualParcela(total, tParcelas, tJuros);
+            f.limpar();
+            f.addListaDeParcelas(parcelas);
+        } catch (ParseException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }        
+    } else {
         try {
             valorProduto = totalProduto.parse(ValorBemjNumberFormatField.getText());
             parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
@@ -433,6 +490,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
             System.out.println(ex.getMessage());
         }
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ValorBemjNumberFormatFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldKeyPressed
@@ -470,11 +528,6 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Double interest = taxaJuros.doubleValue();
-        if (!"0,00".equals(ValorBemjNumberFormatField.getText())) {
-            jTextField3.setText(String.valueOf(c.calculoCetReal(interest)).replace(".", ","));
-        }
-
     }//GEN-LAST:event_JurosjTextFieldKeyReleased
 
     private void ValorBemjNumberFormatFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldFocusGained
@@ -482,11 +535,11 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_ValorBemjNumberFormatFieldFocusGained
 
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
-        if (cav == null) {
-        cav = new CalculadoraAVistaViewer();
-        cav.setVisible(true);
+        if (cpv == null) {
+        cpv = new CalculadoraPrestacoesViewer();
+        cpv.setVisible(true);
         } else {
-        cav.setVisible(true);    
+        cpv.setVisible(true);    
         }
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
@@ -517,10 +570,45 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
 
     private void jNumberFormatField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberFormatField5ActionPerformed
-        this.TotalParcelasjTextField.requestFocusInWindow();
+        try {
+            parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
+            pDesejada = parcelaDesejada.doubleValue();
+            if (pDesejada == 0.0) {
+            this.jNumberFormatField5.requestFocusInWindow();
+            JOptionPane.showMessageDialog(this, "Normalmente o valor da parcela é diferente de zero!", "Atenção!", 1);
+            }
+            this.TotalParcelasjTextField.requestFocusInWindow();            
+        } catch (ParseException ex) {
+            Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+        }
     }//GEN-LAST:event_jNumberFormatField5ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+    if (jCheckBox4.isSelected()) {
+        try {
+            valorProduto = totalProduto.parse(ValorBemjNumberFormatField.getText());
+            parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
+            //numeroParcela.parse(TotalParcelasjTextField.getText());
+            taxaJuros = valorJuros.parse(JurosjTextField.getText());
+            
+
+            total = valorProduto.doubleValue();
+            pDesejada = parcelaDesejada.doubleValue();
+            tParcelas = numeroParcela.parse(TotalParcelasjTextField.getText()).intValue();
+            tJuros = taxaJuros.doubleValue();
+            
+            List<ParcelaPrestacaoReversa> parcelas = new ArrayList<>();
+            
+            Calculadora c2 = new CalculadoraImpl();
+            parcelas = c2.calculoEntradaIgualParcela(total, tParcelas, tJuros);
+            f.limpar();
+            f.addListaDeParcelas(parcelas);
+        } catch (ParseException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
+            System.out.println(ex.getMessage());
+        }        
+    } else {
         try {
             valorProduto = totalProduto.parse(ValorBemjNumberFormatField.getText());
             parcelaDesejada = valorParcelas.parse(jNumberFormatField5.getText());
@@ -542,8 +630,24 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         } catch (ParseException | NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Um ou mais valores não informados ou incompatíveis!", "Atenção!", 2);
             System.out.println(ex.getMessage());
-        }        
+        }
+    }
     }//GEN-LAST:event_jButton1KeyPressed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        if (jCheckBox4.isSelected()) {
+            jNumberFormatField5.setEditable(false);
+            jNumberFormatField5.setForeground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
+            jNumberFormatField5.setBackground(Color.getHSBColor(0.6666667f, 0.02745098f, 1.0f));
+            jNumberFormatField5.setText("");
+            ValorBemjNumberFormatField.requestFocusInWindow();
+
+        } else {
+            jNumberFormatField5.setEditable(true);
+            jNumberFormatField5.setForeground(Color.BLACK);
+            jNumberFormatField5.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -606,10 +710,10 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator barraMenuSeparador;
     private javax.swing.JMenuItem barraMenuSimul;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private br.com.lojaoriodopeixe.utils.JNumberFormatField jNumberFormatField5;
     private javax.swing.JPanel jPanel1;
@@ -617,6 +721,5 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
