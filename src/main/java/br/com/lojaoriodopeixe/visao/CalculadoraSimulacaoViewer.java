@@ -4,6 +4,7 @@ import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.utils.FuncTableModelPrestacoesReversa;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
+import br.com.lojaoriodopeixe.utils.TableColumnAdjuster;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Component;
@@ -18,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -90,10 +92,10 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
 
                 Component c = super.prepareRenderer(renderer, rowIndex, vColIndex);
                 if (jCheckBox4.isSelected()) {
-                    if ((tParcelas - 1) > 9) {
+                    if ((tParcelas) > 9) {
                         // altera a cor de background da linha para vermelho e foreground para branco
                         // quando o valor da coluna 3 for igual a fechado
-                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + " + (tParcelas-1) + "ª Parc.")) {
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + " + (tParcelas) + " Parcela(s)")) {
                             c.setBackground(new Color(192, 0, 0));
                             c.setForeground(Color.white);
                         } else {
@@ -111,7 +113,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                         }
                     } else {// altera a cor de background da linha para vermelho e foreground para branco
                         // quando o valor da coluna 3 for igual a fechado
-                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + 0" + (tParcelas-1) + "ª Parc."
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + 0" + (tParcelas) + " Parcela(s)"
 
                         )) {
                             c.setBackground(new Color(192, 0, 0));
@@ -250,11 +252,6 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                                 JurosjTextFieldActionPerformed(evt);
                             }
                         });
-                        JurosjTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-                            public void keyReleased(java.awt.event.KeyEvent evt) {
-                                JurosjTextFieldKeyReleased(evt);
-                            }
-                        });
 
                         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                         jLabel3.setText("Juros ao Mês");
@@ -286,8 +283,11 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
                         jLabel8.setText("Valor da Parcela Desejada R$");
 
+                        TableColumnAdjuster tca = new TableColumnAdjuster(jTable3);
+                        tca.adjustColumns();
                         jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                         jTable3.setModel(f);
+                        jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
                         jTable3.setRowHeight(23);
                         jScrollPane3.setViewportView(jTable3);
 
@@ -305,28 +305,30 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                         jPanel1Layout.setHorizontalGroup(
                             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jNumberFormatField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel8))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox4))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jNumberFormatField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(ValorBemjNumberFormatField, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel3))))
-                                .addContainerGap())
-                            .addComponent(jScrollPane3)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jCheckBox4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel2)
+                                                    .addComponent(TotalParcelasjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(JurosjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel3))))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         );
                         jPanel1Layout.setVerticalGroup(
                             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,10 +347,10 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jNumberFormatField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jNumberFormatField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                                 .addContainerGap())
@@ -519,16 +521,6 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     private void JurosjTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JurosjTextFieldActionPerformed
         this.jButton1.requestFocusInWindow();
     }//GEN-LAST:event_JurosjTextFieldActionPerformed
-
-    private void JurosjTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JurosjTextFieldKeyReleased
-        try {
-            if (JurosjTextField.getText() != null) {
-                taxaJuros = valorJuros.parse(JurosjTextField.getText());
-            }
-        } catch (ParseException ex) {
-            Logger.getLogger(CalculadoraSimulacaoViewer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_JurosjTextFieldKeyReleased
 
     private void ValorBemjNumberFormatFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ValorBemjNumberFormatFieldFocusGained
         ValorBemjNumberFormatField.selectAll();

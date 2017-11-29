@@ -4,6 +4,7 @@ import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.utils.FuncTableModelPrestacoes;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
+import br.com.lojaoriodopeixe.utils.TableColumnAdjuster;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Component;
@@ -282,8 +283,11 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
                     }
                 });
 
+                TableColumnAdjuster tca = new TableColumnAdjuster(jTable3);
+                tca.adjustColumns();
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
+                jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
                 jTable3.setRowHeight(23);
                 jScrollPane3.setViewportView(jTable3);
 
