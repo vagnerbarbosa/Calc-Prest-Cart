@@ -16,7 +16,7 @@ public class ParcTableModelAVista extends AbstractTableModel {
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº de Parcelas", "Valor a ser Lançado no Sabium"};
+            "Nº de Parcelas", "Valor à Vista deve Ser"};
 
 
     /* Cria um FuncionarioTableModel vazio. */
