@@ -46,7 +46,8 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     
     public static CalculadoraPrestacoesViewer cpv = null;
     public static CalculadoraAVistaViewer cav = null;
-    public static CalculadoraSimulacaoViewer csv = null;     
+    public static CalculadoraSimulacaoViewer csv = null;
+    public static CalculadoraSobreViewer cssv = null;  
     /**
      * Creates new form Main
      */
@@ -540,7 +541,12 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuSairActionPerformed
 
     private void barraMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuItemSobreActionPerformed
-        JOptionPane.showConfirmDialog( null," Desenvolvido em conjunto por: \n Vagner Barbosa e Solon Diego", "Sobre",JOptionPane.CLOSED_OPTION);
+        if (cssv == null) {
+        cssv = new CalculadoraSobreViewer();
+        cssv.setVisible(true);
+        } else {
+        cssv.setVisible(true);
+        }
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
