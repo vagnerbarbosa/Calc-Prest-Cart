@@ -1,4 +1,3 @@
-# calc-prest-cart
 calc-prest-cart by GNU Global Public Licence
 =========================
 
