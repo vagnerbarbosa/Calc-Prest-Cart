@@ -156,7 +156,7 @@ public class CalculadoraImpl implements Calculadora {
         CF = (i/100)/(1-(1/Math.pow(1+(i/100), x-1)));        
         PMT = (PV * CF)/(1+CF);
         ParcelaPrestacaoReversa parcela = new ParcelaPrestacaoReversa();
-        if (x < 10) {
+        if ((x-1) < 10) {
         parcela.setNumeroParcela("01 + " + "0" + String.valueOf(x-1) + " Parcela(s)");
         } else {
         parcela.setNumeroParcela("01 + " + String.valueOf(x-1) + " Parcela(s)");    

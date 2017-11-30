@@ -16,7 +16,7 @@ public class FuncTableModelPrestacoesReversa extends AbstractTableModel {
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº", "Valor Parcela","Entrada Sugerida", "Total Pago"};
+            "Nº", "Valor Parcela","Entrada Sugerida", "Total"};
 
 
     /* Cria um FuncionarioTableModel vazio. */

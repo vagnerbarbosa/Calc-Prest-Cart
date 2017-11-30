@@ -8,11 +8,7 @@ package br.com.lojaoriodopeixe.visao;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultStyledDocument;
-import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
@@ -55,7 +51,7 @@ public class CalculadoraSobreViewer extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane(document);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sobre Nós");
+        setTitle("Sobre");
         setAlwaysOnTop(true);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
         setResizable(false);

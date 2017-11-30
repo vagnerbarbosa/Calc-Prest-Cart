@@ -16,7 +16,7 @@ public class FuncTableModelPrestacoes extends AbstractTableModel {
 
     /* Array de Strings com o nome das colunas. */
     private String[] colunas = new String[] {
-            "Nº", "Parcela","Total Parcelado","Total Geral"};
+            "Nº", "Parcela","Total Parcelado","Total"};
 
 
     /* Cria um FuncionarioTableModel vazio. */
