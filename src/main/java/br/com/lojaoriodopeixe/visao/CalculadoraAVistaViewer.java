@@ -17,6 +17,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableCellRenderer;
 
@@ -237,7 +238,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
                 TableColumnAdjuster tca = new TableColumnAdjuster(jTable3);
                 tca.adjustColumns();
-                HeaderRenderer hd = new HeaderRenderer(jTable3);
+                HeaderRenderer hd = new HeaderRenderer(jTable3, JLabel.CENTER);
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
                 jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);

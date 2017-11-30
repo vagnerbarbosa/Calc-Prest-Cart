@@ -14,10 +14,10 @@ public class HeaderRenderer implements TableCellRenderer {
 
     DefaultTableCellRenderer renderer;
 
-    public HeaderRenderer(JTable table) {
+    public HeaderRenderer(JTable table, int orientation) {
         renderer = (DefaultTableCellRenderer)
             table.getTableHeader().getDefaultRenderer();
-        renderer.setHorizontalAlignment(JLabel.RIGHT);
+        renderer.setHorizontalAlignment(orientation);
     }
 
     @Override
