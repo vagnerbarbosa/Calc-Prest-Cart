@@ -4,6 +4,7 @@ import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
 import br.com.lojaoriodopeixe.utils.FuncTableModelPrestacoes;
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacoes;
+import br.com.lojaoriodopeixe.utils.HeaderRenderer;
 import br.com.lojaoriodopeixe.utils.TableColumnAdjuster;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
@@ -162,7 +163,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setTitle("Cálculo de Prestações (Financiamento)");
-                setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
+                setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/calc-md.png")));
                 setResizable(false);
 
                 jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -290,6 +291,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
                 TableColumnAdjuster tca = new TableColumnAdjuster(jTable3);
                 tca.adjustColumns();
+                HeaderRenderer hd = new HeaderRenderer(jTable3);
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
                 jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -594,9 +596,12 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_ValorBemjNumberFormatFieldFocusGained
 
     private void barraMenuCalcPrestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcPrestActionPerformed
-        this.dispose();
-        CalculadoraPrestacoesViewer cpv = new CalculadoraPrestacoesViewer();
+        if (cpv == null) {
+        cpv = new CalculadoraPrestacoesViewer();
         cpv.setVisible(true);
+        } else {
+        cpv.setVisible(true);    
+        }
     }//GEN-LAST:event_barraMenuCalcPrestActionPerformed
 
     private void barraMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSairActionPerformed
@@ -613,15 +618,21 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
     }//GEN-LAST:event_barraMenuItemSobreActionPerformed
 
     private void barraMenuCalcVistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuCalcVistaActionPerformed
-        this.dispose();
-        CalculadoraAVistaViewer cav = new CalculadoraAVistaViewer();
+        if (cav == null) {
+        cav = new CalculadoraAVistaViewer();
         cav.setVisible(true);
+        } else {
+        cav.setVisible(true);    
+        }
     }//GEN-LAST:event_barraMenuCalcVistaActionPerformed
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
-        this.dispose();
-        CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
+        if (csv == null) {
+        csv = new CalculadoraSimulacaoViewer();
         csv.setVisible(true);
+        } else {
+        csv.setVisible(true);    
+        }
     }//GEN-LAST:event_barraMenuSimulActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed

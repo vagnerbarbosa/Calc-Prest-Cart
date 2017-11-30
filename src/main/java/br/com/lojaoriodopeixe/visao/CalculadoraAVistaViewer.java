@@ -2,6 +2,7 @@ package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.Calculadora;
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
+import br.com.lojaoriodopeixe.utils.HeaderRenderer;
 import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
 import br.com.lojaoriodopeixe.utils.TableColumnAdjuster;
 import br.com.lojaoriodopeixe.utils.Utils;
@@ -154,7 +155,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setTitle("Cálculo para Valor à Vista");
-                setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
+                setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/calc-md.png")));
                 setResizable(false);
 
                 jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -236,6 +237,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
                 TableColumnAdjuster tca = new TableColumnAdjuster(jTable3);
                 tca.adjustColumns();
+                HeaderRenderer hd = new HeaderRenderer(jTable3);
                 jTable3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
                 jTable3.setModel(f);
                 jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);

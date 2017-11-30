@@ -53,7 +53,7 @@ public class CalculadoraSobreViewer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobre");
         setAlwaysOnTop(true);
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/calc-md.png")));
         setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/glp-sm.png"))); // NOI18N

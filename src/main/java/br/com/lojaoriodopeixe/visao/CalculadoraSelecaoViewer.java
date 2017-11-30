@@ -64,7 +64,7 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora LRP");
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/mono.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/calc-md.png")));
         setIconImages(getIconImages());
         setLocationByPlatform(true);
         setResizable(false);
