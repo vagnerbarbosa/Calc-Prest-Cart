@@ -93,10 +93,10 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
 
                 Component c = super.prepareRenderer(renderer, rowIndex, vColIndex);
                 if (jCheckBox4.isSelected()) {
-                    if ((tParcelas) > 9) {
+                    if ((tParcelas - 1) > 9) {
                         // altera a cor de background da linha para vermelho e foreground para branco
                         // quando o valor da coluna 3 for igual a fechado
-                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + " + (tParcelas) + " Parcela(s)")) {
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + " + (tParcelas - 1) + " Parcela(s)")) {
                             c.setBackground(new Color(192, 0, 0));
                             c.setForeground(Color.white);
                         } else {
@@ -114,7 +114,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                         }
                     } else {// altera a cor de background da linha para vermelho e foreground para branco
                         // quando o valor da coluna 3 for igual a fechado
-                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + 0" + (tParcelas) + " Parcela(s)"
+                        if (jTable3.getValueAt(rowIndex, 0).toString().equals("01 + 0" + (tParcelas -1) + " Parcela(s)"
 
                         )) {
                             c.setBackground(new Color(192, 0, 0));

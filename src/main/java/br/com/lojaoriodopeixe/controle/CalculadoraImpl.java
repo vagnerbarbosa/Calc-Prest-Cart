@@ -155,22 +155,19 @@ public class CalculadoraImpl implements Calculadora {
         if (x > 1) {    
         CF = (i/100)/(1-(1/Math.pow(1+(i/100), x-1)));        
         PMT = (PV * CF)/(1+CF);
-        } else {
-        CF = (i/100)/(1-(1/Math.pow(1+(i/100), x)));        
-        PMT = (PV * CF)/(1+CF);    
-        }
-        
-        
         ParcelaPrestacaoReversa parcela = new ParcelaPrestacaoReversa();
         if (x < 10) {
-        parcela.setNumeroParcela("01 + " + "0" + String.valueOf(x) + " Parcela(s)");
+        parcela.setNumeroParcela("01 + " + "0" + String.valueOf(x-1) + " Parcela(s)");
         } else {
-        parcela.setNumeroParcela("01 + " + String.valueOf(x) + " Parcela(s)");    
+        parcela.setNumeroParcela("01 + " + String.valueOf(x-1) + " Parcela(s)");    
         }
         parcela.setValorEntradaSugerida(decFormat.format( PMT ));
         parcela.setValorParcela(decFormat.format( PMT ));
-        parcela.setValorTotalPago(decFormat.format( PMT + (x * PMT) ));
-        parcelas.add(parcela);
+        parcela.setValorTotalPago(decFormat.format((x * PMT) ));
+        parcelas.add(parcela);        
+        } 
+        
+
         
         }
         return parcelas;        
