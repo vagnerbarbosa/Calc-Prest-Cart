@@ -1,10 +1,8 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
-import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
+import br.com.lojaoriodopeixe.modelo.*;
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Classe de Interface Calculadora.

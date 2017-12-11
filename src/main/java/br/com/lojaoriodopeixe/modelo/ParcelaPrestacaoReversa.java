@@ -1,8 +1,13 @@
 package br.com.lojaoriodopeixe.modelo;
 
 /**
+ * Classe de entidade ParcelaPrestacaoReversa.
  *
- * @author vagner
+ * @author Vagner Barbosa (contato@vagnerbarbosa.com)
+ *
+ * @since 10/11/2017
+ *
+ * @version 1.0
  */
 public class ParcelaPrestacaoReversa {
     

@@ -1,13 +1,9 @@
 package br.com.lojaoriodopeixe.controle;
 
-import br.com.lojaoriodopeixe.modelo.ParcelaParaAVista;
-import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
-import java.math.BigDecimal;
+import br.com.lojaoriodopeixe.modelo.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 /**
  * Classe de controle CalculadoraImpl.

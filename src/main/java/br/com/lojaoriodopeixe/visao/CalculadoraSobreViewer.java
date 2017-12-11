@@ -6,13 +6,9 @@
 package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.utils.Utils;
-import java.awt.Color;
+import javax.swing.text.*;
 import java.awt.Toolkit;
-import javax.swing.text.DefaultStyledDocument;
-import javax.swing.text.Style;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyleContext;
-import javax.swing.text.StyledDocument;
+import java.awt.Color;
 
 /**
  *

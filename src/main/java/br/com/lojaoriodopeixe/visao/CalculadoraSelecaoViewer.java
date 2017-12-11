@@ -1,10 +1,8 @@
 package br.com.lojaoriodopeixe.visao;
 
 import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
-import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
-import br.com.lojaoriodopeixe.utils.Utils;
-import java.awt.Color;
-import java.awt.Toolkit;
+import br.com.lojaoriodopeixe.utils.*;
+import java.awt.*;
 
 /**
  * Classe de visão CalculadoraSelecaoViewer.

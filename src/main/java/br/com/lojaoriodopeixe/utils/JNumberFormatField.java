@@ -1,18 +1,11 @@
 package br.com.lojaoriodopeixe.utils;
 
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
-import javax.swing.JTextField;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.PlainDocument;
+import javax.swing.event.*;
+import javax.swing.text.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.math.*;
+import java.text.*;
 
 /**
  * Campo para a inserção de números com base em um formato.

@@ -1,14 +1,17 @@
 package br.com.lojaoriodopeixe.utils;
 
+import javax.swing.table.*;
 import java.awt.Component;
-import javax.swing.JLabel;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableCellRenderer;
 
 /**
+ * Implementação de TableCellRenderer.
  *
- * @author vagner
+ * @author Vagner Barbosa (contato@vagnerbarbosa.com)
+ *
+ * @since 10/11/2017
+ *
+ * @version 1.0
  */
 public class HeaderRenderer implements TableCellRenderer {
 

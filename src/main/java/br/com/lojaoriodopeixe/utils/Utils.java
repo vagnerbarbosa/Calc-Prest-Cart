@@ -1,16 +1,8 @@
 package br.com.lojaoriodopeixe.utils;
 
-
-
-import java.awt.AWTKeyStroke;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.KeyboardFocusManager;
-import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
+import java.awt.*;
+import javax.swing.*;
 import java.util.HashSet;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
 
 /**
  * Classe contendo métodos que são úteis em determinadas partes do projeto

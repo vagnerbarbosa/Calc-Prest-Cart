@@ -1,25 +1,14 @@
 package br.com.lojaoriodopeixe.visao;
 
-import br.com.lojaoriodopeixe.controle.Calculadora;
-import br.com.lojaoriodopeixe.controle.CalculadoraImpl;
-import br.com.lojaoriodopeixe.utils.HeaderRenderer;
-import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
-import br.com.lojaoriodopeixe.utils.TableColumnAdjuster;
-import br.com.lojaoriodopeixe.utils.Utils;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Toolkit;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.table.TableCellRenderer;
+import br.com.lojaoriodopeixe.controle.*;
+import br.com.lojaoriodopeixe.utils.*;
+import java.math.BigDecimal;
+import java.util.logging.*;
+import javax.swing.*;
+import java.text.*;
+import java.util.*;
+import java.awt.*;
 
 /**
  *

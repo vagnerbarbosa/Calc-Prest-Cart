@@ -1,9 +1,8 @@
 package br.com.lojaoriodopeixe.utils;
 
 import br.com.lojaoriodopeixe.modelo.ParcelaPrestacaoReversa;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.table.AbstractTableModel;
+import java.util.*;
 
 /**
  * Implementação de Table Model.
