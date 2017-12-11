@@ -30,22 +30,22 @@ import javax.swing.table.TableCellRenderer;
  */
 public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
 
-    FuncTableModelPrestacoes f = new FuncTableModelPrestacoes();
-    Locale locBrazil = new Locale("pt", "BR");
-    NumberFormat nfValue = NumberFormat.getInstance(locBrazil);
-    NumberFormat nfInterest = NumberFormat.getInstance(locBrazil);
-    NumberFormat nfIputValue = NumberFormat.getInstance(locBrazil);
-    NumberFormat nfOldIputValue = NumberFormat.getInstance(locBrazil);
-    Number nValue = null;
-    Number nInterest = null;
-    Number nInputValue = null;
-    Number nOldInputValue = null;
-    Calculadora c = new CalculadoraImpl();
+    private FuncTableModelPrestacoes f = new FuncTableModelPrestacoes();
+    private Locale locBrazil = new Locale("pt", "BR");
+    private NumberFormat nfValue = NumberFormat.getInstance(locBrazil);
+    private NumberFormat nfInterest = NumberFormat.getInstance(locBrazil);
+    private NumberFormat nfIputValue = NumberFormat.getInstance(locBrazil);
+    private NumberFormat nfOldIputValue = NumberFormat.getInstance(locBrazil);
+    private Number nValue = null;
+    private Number nInterest = null;
+    private Number nInputValue = null;
+    private Number nOldInputValue = null;
+    private Calculadora c = new CalculadoraImpl();
 
-    Double inputValue = 0d;
-    Integer months = 0;
-    Double interest = 0d;
-    Double value = 0d;
+    private Double inputValue = 0d;
+    private Integer months = 0;
+    private Double interest = 0d;
+    private Double value = 0d;
     
     public static CalculadoraPrestacoesViewer cpv = null;
     public static CalculadoraAVistaViewer cav = null;
@@ -529,7 +529,7 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         }
         Double bem = nInputValue.doubleValue();
         Double financiamento = nValue.doubleValue();
-        Double realValue = null;
+        Double realValue;
         if (!Objects.equals(bem, financiamento)) {
             realValue = bem + 0;
         } else {
@@ -705,11 +705,8 @@ public class CalculadoraPrestacoesViewer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CalculadoraPrestacoesViewer().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CalculadoraPrestacoesViewer().setVisible(true);
         });
     }
 

@@ -29,22 +29,22 @@ import javax.swing.table.TableColumn;
  */
 public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
 
-    FuncTableModelPrestacoesReversa f = new FuncTableModelPrestacoesReversa();
-    Locale locBrazil = new Locale("pt", "BR");
-    NumberFormat totalProduto = NumberFormat.getInstance(locBrazil);
-    NumberFormat valorJuros = NumberFormat.getInstance(locBrazil);
-    NumberFormat valorParcelas = NumberFormat.getInstance(locBrazil);
-    NumberFormat numeroParcela = NumberFormat.getInstance(locBrazil);
-    Number valorProduto = null;
-    Number taxaJuros = null;
-    Number parcelaDesejada = null;
-    Number nOldInputValue = null;
-    Calculadora c = new CalculadoraImpl();
+    private FuncTableModelPrestacoesReversa f = new FuncTableModelPrestacoesReversa();
+    private Locale locBrazil = new Locale("pt", "BR");
+    private NumberFormat totalProduto = NumberFormat.getInstance(locBrazil);
+    private NumberFormat valorJuros = NumberFormat.getInstance(locBrazil);
+    private NumberFormat valorParcelas = NumberFormat.getInstance(locBrazil);
+    private NumberFormat numeroParcela = NumberFormat.getInstance(locBrazil);
+    private Number valorProduto = null;
+    private Number taxaJuros = null;
+    private Number parcelaDesejada = null;
+    private Number nOldInputValue = null;
+    private Calculadora c = new CalculadoraImpl();
 
-    Double pDesejada = 0d;
-    Integer tParcelas = 0;
-    Double tJuros = 0d;
-    Double total = 0d;
+    private Double pDesejada = 0d;
+    private Integer tParcelas = 0;
+    private Double tJuros = 0d;
+    private Double total = 0d;
     
     public static CalculadoraPrestacoesViewer cpv = null;
     public static CalculadoraAVistaViewer cav = null;
@@ -689,11 +689,8 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CalculadoraSimulacaoViewer().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CalculadoraSimulacaoViewer().setVisible(true);
         });
     }
 

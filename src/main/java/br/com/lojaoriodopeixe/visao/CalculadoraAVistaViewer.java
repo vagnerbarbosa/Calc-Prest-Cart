@@ -27,23 +27,23 @@ import javax.swing.table.TableCellRenderer;
  */
 public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
-    ParcTableModelAVista f = new ParcTableModelAVista();
-    Locale locBrazil = new Locale("pt", "BR");
-    NumberFormat vProduto = NumberFormat.getInstance(locBrazil);
-    NumberFormat pParcelas = NumberFormat.getInstance(locBrazil);
-    NumberFormat tJuros = NumberFormat.getInstance(locBrazil);
-    NumberFormat nfIputValue = NumberFormat.getInstance(locBrazil);
-    NumberFormat nfOldIputValue = NumberFormat.getInstance(locBrazil);
-    Number nValue = null;
-    Number nInterest = null;
-    Number nInputValue = null;
-    Number nOldInputValue = null;
-    Calculadora c = new CalculadoraImpl();
+    private ParcTableModelAVista f = new ParcTableModelAVista();
+    private Locale locBrazil = new Locale("pt", "BR");
+    private NumberFormat vProduto = NumberFormat.getInstance(locBrazil);
+    private NumberFormat pParcelas = NumberFormat.getInstance(locBrazil);
+    private NumberFormat tJuros = NumberFormat.getInstance(locBrazil);
+    private NumberFormat nfIputValue = NumberFormat.getInstance(locBrazil);
+    private NumberFormat nfOldIputValue = NumberFormat.getInstance(locBrazil);
+    private Number nValue = null;
+    private Number nInterest = null;
+    private Number nInputValue = null;
+    private Number nOldInputValue = null;
+    private Calculadora c = new CalculadoraImpl();
 
-    Double inputValue = 0d;
-    Integer parcelas = 0;
-    Double interest = 0d;
-    Double value = 0d;
+    private Double inputValue = 0d;
+    private Integer parcelas = 0;
+    private Double interest = 0d;
+    private Double value = 0d;
     
     public static CalculadoraPrestacoesViewer cpv = null;
     public static CalculadoraAVistaViewer cav = null;
@@ -438,7 +438,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(CalculadoraAVistaViewer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Double interest = nInterest.doubleValue();
+        interest = nInterest.doubleValue();
 
 
     }//GEN-LAST:event_JurosjTextFieldKeyReleased
@@ -480,7 +480,7 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
 
     private void barraMenuSimulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraMenuSimulActionPerformed
         if (csv == null) {
-        CalculadoraSimulacaoViewer csv = new CalculadoraSimulacaoViewer();
+        csv = new CalculadoraSimulacaoViewer();
         csv.setVisible(true);
         } else {
         csv.setVisible(true);
@@ -540,11 +540,8 @@ public class CalculadoraAVistaViewer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CalculadoraAVistaViewer().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CalculadoraAVistaViewer().setVisible(true);
         });
     }
 

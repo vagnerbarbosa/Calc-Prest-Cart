@@ -5,7 +5,6 @@ import br.com.lojaoriodopeixe.utils.ParcTableModelAVista;
 import br.com.lojaoriodopeixe.utils.Utils;
 import java.awt.Color;
 import java.awt.Toolkit;
-import javax.swing.JOptionPane;
 
 /**
  * Classe de visão CalculadoraSelecaoViewer.
@@ -297,10 +296,8 @@ public class CalculadoraSelecaoViewer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CalculadoraSelecaoViewer().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CalculadoraSelecaoViewer().setVisible(true);
         });
     }
 
