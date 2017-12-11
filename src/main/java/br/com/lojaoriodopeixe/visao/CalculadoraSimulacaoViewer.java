@@ -296,7 +296,7 @@ public class CalculadoraSimulacaoViewer extends javax.swing.JFrame {
                         jScrollPane3.setViewportView(jTable3);
 
                         jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-                        jCheckBox4.setText("Entrada Igual Parcela");
+                        jCheckBox4.setText("Entrada = Parcelas");
                         jCheckBox4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
                         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {

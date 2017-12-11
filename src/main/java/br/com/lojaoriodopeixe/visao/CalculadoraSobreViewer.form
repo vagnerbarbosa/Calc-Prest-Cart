@@ -108,7 +108,7 @@
               <Font name="Courier New" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Desenvolvindo por:\nSolon Diego\n Vagner Barbosa \n&quot;" type="code"/>
+              <Connection code="&quot;Desenvolvido por:\nSolon Diego\n Vagner Barbosa \n&quot;" type="code"/>
             </Property>
             <Property name="autoscrolls" type="boolean" value="false"/>
           </Properties>

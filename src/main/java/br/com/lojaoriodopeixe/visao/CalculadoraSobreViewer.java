@@ -64,7 +64,7 @@ public class CalculadoraSobreViewer extends javax.swing.JFrame {
 
         jTextPane1.setEditable(false);
         jTextPane1.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
-        jTextPane1.setText("Desenvolvindo por:\nSolon Diego\n Vagner Barbosa \n");
+        jTextPane1.setText("Desenvolvido por:\nSolon Diego\n Vagner Barbosa \n");
         jTextPane1.setAutoscrolls(false);
         jScrollPane2.setViewportView(jTextPane1);
 
